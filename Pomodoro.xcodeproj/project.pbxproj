@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		EA8FF4C11B3D927E00F6F77B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FF4C01B3D927E00F6F77B /* AppDelegate.swift */; };
-		EA8FF4C31B3D927E00F6F77B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FF4C21B3D927E00F6F77B /* ViewController.swift */; };
+		EA8FF4C31B3D927E00F6F77B /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FF4C21B3D927E00F6F77B /* TimerViewController.swift */; };
 		EA8FF4C61B3D927E00F6F77B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA8FF4C41B3D927E00F6F77B /* Main.storyboard */; };
 		EA8FF4C81B3D927E00F6F77B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA8FF4C71B3D927E00F6F77B /* Images.xcassets */; };
 		EA8FF4CB1B3D927E00F6F77B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA8FF4C91B3D927E00F6F77B /* LaunchScreen.xib */; };
-		EA8FF4D71B3D927E00F6F77B /* PomodoroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FF4D61B3D927E00F6F77B /* PomodoroTests.swift */; };
+		EA8FF4D71B3D927E00F6F77B /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FF4D61B3D927E00F6F77B /* TimerTests.swift */; };
+		EA8FF4E21B3D930800F6F77B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FF4E01B3D930800F6F77B /* Constants.swift */; };
+		EA8FF4E51B3D930800F6F77B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FF4E41B3D930800F6F77B /* Timer.swift */; };
+		EA8FF4E61B3D939700F6F77B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FF4E41B3D930800F6F77B /* Timer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +32,15 @@
 		EA8FF4BB1B3D927E00F6F77B /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA8FF4BF1B3D927E00F6F77B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA8FF4C01B3D927E00F6F77B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EA8FF4C21B3D927E00F6F77B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EA8FF4C21B3D927E00F6F77B /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		EA8FF4C51B3D927E00F6F77B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA8FF4C71B3D927E00F6F77B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EA8FF4CA1B3D927E00F6F77B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EA8FF4D01B3D927E00F6F77B /* PomodoroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PomodoroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA8FF4D51B3D927E00F6F77B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA8FF4D61B3D927E00F6F77B /* PomodoroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroTests.swift; sourceTree = "<group>"; };
+		EA8FF4D61B3D927E00F6F77B /* TimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
+		EA8FF4E01B3D930800F6F77B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EA8FF4E41B3D930800F6F77B /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,10 +83,9 @@
 			isa = PBXGroup;
 			children = (
 				EA8FF4C01B3D927E00F6F77B /* AppDelegate.swift */,
-				EA8FF4C21B3D927E00F6F77B /* ViewController.swift */,
+				EA8FF4C21B3D927E00F6F77B /* TimerViewController.swift */,
+				EA8FF4E41B3D930800F6F77B /* Timer.swift */,
 				EA8FF4C41B3D927E00F6F77B /* Main.storyboard */,
-				EA8FF4C71B3D927E00F6F77B /* Images.xcassets */,
-				EA8FF4C91B3D927E00F6F77B /* LaunchScreen.xib */,
 				EA8FF4BE1B3D927E00F6F77B /* Supporting Files */,
 			);
 			path = Pomodoro;
@@ -90,6 +94,9 @@
 		EA8FF4BE1B3D927E00F6F77B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EA8FF4E01B3D930800F6F77B /* Constants.swift */,
+				EA8FF4C71B3D927E00F6F77B /* Images.xcassets */,
+				EA8FF4C91B3D927E00F6F77B /* LaunchScreen.xib */,
 				EA8FF4BF1B3D927E00F6F77B /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -98,7 +105,7 @@
 		EA8FF4D31B3D927E00F6F77B /* PomodoroTests */ = {
 			isa = PBXGroup;
 			children = (
-				EA8FF4D61B3D927E00F6F77B /* PomodoroTests.swift */,
+				EA8FF4D61B3D927E00F6F77B /* TimerTests.swift */,
 				EA8FF4D41B3D927E00F6F77B /* Supporting Files */,
 			);
 			path = PomodoroTests;
@@ -212,8 +219,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA8FF4C31B3D927E00F6F77B /* ViewController.swift in Sources */,
+				EA8FF4C31B3D927E00F6F77B /* TimerViewController.swift in Sources */,
 				EA8FF4C11B3D927E00F6F77B /* AppDelegate.swift in Sources */,
+				EA8FF4E21B3D930800F6F77B /* Constants.swift in Sources */,
+				EA8FF4E51B3D930800F6F77B /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +230,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA8FF4D71B3D927E00F6F77B /* PomodoroTests.swift in Sources */,
+				EA8FF4D71B3D927E00F6F77B /* TimerTests.swift in Sources */,
+				EA8FF4E61B3D939700F6F77B /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

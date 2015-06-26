@@ -1,0 +1,7 @@
+version: "Apple Swift version 1.2 (swiftlang-602.0.53.1 clang-602.0.53)"
+options: "497a098bf757d018bc20592c6b1317c0"
+inputs: 
+- "/Users/martinho/Desktop/Pomodoro/Pomodoro/TimerViewController.swift"
+- "/Users/martinho/Desktop/Pomodoro/Pomodoro/AppDelegate.swift"
+- "/Users/martinho/Desktop/Pomodoro/Pomodoro/Constants.swift"
+- "/Users/martinho/Desktop/Pomodoro/Pomodoro/Timer.swift"

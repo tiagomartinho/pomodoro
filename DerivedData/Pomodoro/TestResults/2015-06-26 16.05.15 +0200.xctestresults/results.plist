@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Results</key>
+	<array>
+		<dict>
+			<key>Provider Name</key>
+			<string>Pomodoro</string>
+			<key>Testable Name</key>
+			<string>PomodoroTests</string>
+			<key>Testable Tests</key>
+			<array>
+				<dict>
+					<key>Test Identifier</key>
+					<string>TimerTests/testDecreaseReducesOneMinuteIfSecondsAreZero()</string>
+					<key>Test Name</key>
+					<string>testDecreaseReducesOneMinuteIfSecondsAreZero()</string>
+					<key>Test Result</key>
+					<string>Succeeded</string>
+				</dict>
+				<dict>
+					<key>Test Identifier</key>
+					<string>TimerTests/testDecreaseReducesOneSecond()</string>
+					<key>Test Name</key>
+					<string>testDecreaseReducesOneSecond()</string>
+					<key>Test Result</key>
+					<string>Succeeded</string>
+				</dict>
+				<dict>
+					<key>Test Identifier</key>
+					<string>TimerTests/testNewTimerInitalizesWithRightValues()</string>
+					<key>Test Name</key>
+					<string>testNewTimerInitalizesWithRightValues()</string>
+					<key>Test Result</key>
+					<string>Succeeded</string>
+				</dict>
+				<dict>
+					<key>Test Identifier</key>
+					<string>TimerTests/testTimerConformsToPrintableProtocol()</string>
+					<key>Test Name</key>
+					<string>testTimerConformsToPrintableProtocol()</string>
+					<key>Test Result</key>
+					<string>Succeeded</string>
+				</dict>
+				<dict>
+					<key>Test Identifier</key>
+					<string>TimerTests/testTimerDoesntDecreaseAfterZeroAndFinishes()</string>
+					<key>Test Name</key>
+					<string>testTimerDoesntDecreaseAfterZeroAndFinishes()</string>
+					<key>Test Result</key>
+					<string>Succeeded</string>
+				</dict>
+				<dict>
+					<key>Test Identifier</key>
+					<string>TimerTests/testTimerPrintsSymmetricDescription()</string>
+					<key>Test Name</key>
+					<string>testTimerPrintsSymmetricDescription()</string>
+					<key>Test Result</key>
+					<string>Succeeded</string>
+				</dict>
+				<dict>
+					<key>Test Identifier</key>
+					<string>TimerTests/testTimerResetsToInitalValue()</string>
+					<key>Test Name</key>
+					<string>testTimerResetsToInitalValue()</string>
+					<key>Test Result</key>
+					<string>Succeeded</string>
+				</dict>
+				<dict>
+					<key>Test Identifier</key>
+					<string>TimerTests/testTimerSetsToValueLessThanInitialValue()</string>
+					<key>Test Name</key>
+					<string>testTimerSetsToValueLessThanInitialValue()</string>
+					<key>Test Result</key>
+					<string>Succeeded</string>
+				</dict>
+				<dict>
+					<key>Test Identifier</key>
+					<string>TimerTests/testTimerTracksProgressInPercent()</string>
+					<key>Test Name</key>
+					<string>testTimerTracksProgressInPercent()</string>
+					<key>Test Result</key>
+					<string>Succeeded</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+	<key>Version</key>
+	<string>1.0</string>
+</dict>
+</plist>
