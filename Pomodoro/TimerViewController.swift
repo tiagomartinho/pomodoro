@@ -7,7 +7,7 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var timerProgress: UIProgressView!
     @IBOutlet weak var toggleTimerButton: UIButton!
     
-    var timer = Timer(minutes: 25, seconds: 0)
+    var timer = Timer(minutes: 1, seconds: 0)
     
     var mainNSTimer:NSTimer?
     
@@ -42,12 +42,7 @@ class TimerViewController: UIViewController {
     }
     
     func startTimer(){
-        UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler { () -> Void in
-        }
-        
-        mainNSTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "tick:", userInfo: nil, repeats: true)
-        
-        NSRunLoop.currentRunLoop().addTimer(mainNSTimer!, forMode: NSRunLoopCommonModes)
+        mainNSTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "tick:", userInfo: nil, repeats: true)
     }
     
     func stopAndResetTimer(){
@@ -65,28 +60,10 @@ class TimerViewController: UIViewController {
         
         if(timer.finished){
             stopTimer()
-            flashTimer(1)
+            vibratePhone()
         }
         
         updateUI()
-    }
-    
-    func flashTimer(count:Int){
-        NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "flashTimerLabelAndVibrate:", userInfo: count, repeats: false)
-    }
-    
-    func flashTimerLabelAndVibrate(nsTimer: NSTimer) {
-        if let count = nsTimer.userInfo as? Int{
-            if timer.finished && count<3{
-                toggleTimerLabelBetweenRedAndBlack()
-                vibratePhone()
-                flashTimer(count+1)
-            }
-        }
-    }
-    
-    func toggleTimerLabelBetweenRedAndBlack(){
-        timerLabel.textColor = (timerLabel.textColor == UIColor.redColor()) ? UIColor.blackColor() : UIColor.redColor()
     }
     
     func vibratePhone(){

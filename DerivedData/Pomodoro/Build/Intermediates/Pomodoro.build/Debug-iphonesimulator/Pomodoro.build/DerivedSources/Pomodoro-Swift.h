@@ -127,9 +127,6 @@ SWIFT_CLASS("_TtC8Pomodoro19TimerViewController")
 - (void)stopAndResetTimer;
 - (void)stopTimer;
 - (void)tick:(NSTimer * __nonnull)nsTimer;
-- (void)flashTimer:(NSInteger)count;
-- (void)flashTimerLabelAndVibrate:(NSTimer * __nonnull)nsTimer;
-- (void)toggleTimerLabelBetweenRedAndBlack;
 - (void)vibratePhone;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
