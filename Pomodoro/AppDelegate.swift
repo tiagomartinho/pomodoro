@@ -16,13 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     let needUIUserNotificationType:UIUserNotificationType = UIUserNotificationType.Sound | UIUserNotificationType.Alert | UIUserNotificationType.Badge
-    
     func registerToSendTheUserNotifications(application: UIApplication){
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: needUIUserNotificationType, categories: nil))
-    }
-    
-    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
-        println("handleActionWithIdentifier \(notification.userInfo)")
     }
     
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {

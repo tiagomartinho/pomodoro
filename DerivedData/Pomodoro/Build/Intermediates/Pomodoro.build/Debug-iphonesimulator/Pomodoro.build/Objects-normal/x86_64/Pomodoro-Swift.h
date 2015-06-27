@@ -84,6 +84,7 @@ typedef struct _NSZone NSZone;
 #endif
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
+@import Foundation;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -99,7 +100,6 @@ SWIFT_CLASS("_TtC8Pomodoro11AppDelegate")
 - (BOOL)application:(UIApplication * __nonnull)application didFinishLaunchingWithOptions:(NSDictionary * __nullable)launchOptions;
 @property (nonatomic, readonly) UIUserNotificationType needUIUserNotificationType;
 - (void)registerToSendTheUserNotifications:(UIApplication * __nonnull)application;
-- (void)application:(UIApplication * __nonnull)application handleActionWithIdentifier:(NSString * __nullable)identifier forLocalNotification:(UILocalNotification * __nonnull)notification completionHandler:(void (^ __nonnull)(void))completionHandler;
 - (void)application:(UIApplication * __nonnull)application didReceiveLocalNotification:(UILocalNotification * __nonnull)notification;
 - (void)applicationWillResignActive:(UIApplication * __nonnull)application;
 - (void)applicationDidEnterBackground:(UIApplication * __nonnull)application;
@@ -122,7 +122,8 @@ SWIFT_CLASS("_TtC8Pomodoro19TimerViewController")
 @property (nonatomic, readonly) BOOL timerIsRunning;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
-- (void)scheduleNotification;
+- (void)schedulePomodori;
+- (void)scheduleNotificationWithAlertBody:(NSString * __nonnull)alertBody AndTimeInterval:(NSTimeInterval)timeInterval;
 - (void)cancelAllNotifications;
 - (void)updateUI;
 - (IBAction)toggleTimer;

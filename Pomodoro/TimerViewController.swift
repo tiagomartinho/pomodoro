@@ -26,22 +26,6 @@ class TimerViewController: UIViewController {
             let timeInBackground = NSDate().timeIntervalSince1970 - backgroundTime
             println(timeInBackground)
         }
-        
-        scheduleNotification()
-    }
-    
-    func scheduleNotification(){
-        var localNotification:UILocalNotification = UILocalNotification()
-        localNotification.alertAction = "alertAction"
-        localNotification.alertBody = "alertBody"
-        localNotification.alertTitle = "alertTitle"
-        localNotification.userInfo = ["userInfoKey":"userInfoValue"]
-        localNotification.fireDate = NSDate(timeIntervalSinceNow: 5)
-        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-    }
-    
-    func cancelAllNotifications(){
-        UIApplication.sharedApplication().cancelAllLocalNotifications()
     }
     
     func updateUI(){
@@ -53,6 +37,7 @@ class TimerViewController: UIViewController {
     
     @IBAction func toggleTimer() {
         timerIsRunning ? stopAndResetTimer() : startTimer()
+        timerIsRunning ? Scheduler().schedulePomodoriAndPauses() : Scheduler().cancelAllPomodoriAndPauses()
         updateUI()
     }
     

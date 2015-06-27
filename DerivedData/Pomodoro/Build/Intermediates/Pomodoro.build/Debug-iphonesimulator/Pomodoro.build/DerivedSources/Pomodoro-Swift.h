@@ -99,7 +99,6 @@ SWIFT_CLASS("_TtC8Pomodoro11AppDelegate")
 - (BOOL)application:(UIApplication * __nonnull)application didFinishLaunchingWithOptions:(NSDictionary * __nullable)launchOptions;
 @property (nonatomic, readonly) UIUserNotificationType needUIUserNotificationType;
 - (void)registerToSendTheUserNotifications:(UIApplication * __nonnull)application;
-- (void)application:(UIApplication * __nonnull)application handleActionWithIdentifier:(NSString * __nullable)identifier forLocalNotification:(UILocalNotification * __nonnull)notification completionHandler:(void (^ __nonnull)(void))completionHandler;
 - (void)application:(UIApplication * __nonnull)application didReceiveLocalNotification:(UILocalNotification * __nonnull)notification;
 - (void)applicationWillResignActive:(UIApplication * __nonnull)application;
 - (void)applicationDidEnterBackground:(UIApplication * __nonnull)application;
@@ -122,8 +121,6 @@ SWIFT_CLASS("_TtC8Pomodoro19TimerViewController")
 @property (nonatomic, readonly) BOOL timerIsRunning;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
-- (void)scheduleNotification;
-- (void)cancelAllNotifications;
 - (void)updateUI;
 - (IBAction)toggleTimer;
 - (void)startTimer;
