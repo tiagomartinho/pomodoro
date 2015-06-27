@@ -16,6 +16,7 @@
 		EA8FF4E21B3D930800F6F77B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FF4E01B3D930800F6F77B /* Constants.swift */; };
 		EA8FF4E51B3D930800F6F77B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FF4E41B3D930800F6F77B /* Timer.swift */; };
 		EA8FF4E61B3D939700F6F77B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FF4E41B3D930800F6F77B /* Timer.swift */; };
+		EAAF6D3C1B3EF2E50088AB3A /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAF6D3B1B3EF2E50088AB3A /* NSDateExtension.swift */; };
 		EABE3C241B3ECC3600233DD8 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABE3C231B3ECC3600233DD8 /* Scheduler.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		EA8FF4D61B3D927E00F6F77B /* TimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
 		EA8FF4E01B3D930800F6F77B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EA8FF4E41B3D930800F6F77B /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		EAAF6D3B1B3EF2E50088AB3A /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		EABE3C231B3ECC3600233DD8 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +103,7 @@
 				EA8FF4C71B3D927E00F6F77B /* Images.xcassets */,
 				EA8FF4C91B3D927E00F6F77B /* LaunchScreen.xib */,
 				EA8FF4BF1B3D927E00F6F77B /* Info.plist */,
+				EAAF6D3B1B3EF2E50088AB3A /* NSDateExtension.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAAF6D3C1B3EF2E50088AB3A /* NSDateExtension.swift in Sources */,
 				EA8FF4C31B3D927E00F6F77B /* TimerViewController.swift in Sources */,
 				EA8FF4C11B3D927E00F6F77B /* AppDelegate.swift in Sources */,
 				EA8FF4E21B3D930800F6F77B /* Constants.swift in Sources */,

@@ -10,6 +10,10 @@ class Scheduler {
     let pause = Interval(name: "PAUSE", length: 5)
     let longPause = Interval(name: "LONG PAUSE", length: 15)
     
+    init(){
+        registerToSendTheUserNotifications()
+    }
+    
     func cancelAllPomodoriAndPauses(){
         UIApplication.sharedApplication().cancelAllLocalNotifications()
     }
@@ -30,5 +34,10 @@ class Scheduler {
         notification.fireDate = fireDate
         notification.soundName = UILocalNotificationDefaultSoundName
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
+    }
+    
+    let needUIUserNotificationType:UIUserNotificationType = UIUserNotificationType.Sound | UIUserNotificationType.Alert | UIUserNotificationType.Badge
+    private func registerToSendTheUserNotifications(){
+        UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: needUIUserNotificationType, categories: nil))
     }
 }

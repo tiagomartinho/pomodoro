@@ -21,11 +21,7 @@ class TimerViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        if let backgroundTime = defaults.objectForKey(kUD_EnterBackgroundTime) as? NSTimeInterval {
-            let timeInBackground = NSDate().timeIntervalSince1970 - backgroundTime
-            println(timeInBackground)
-        }
+        super.viewDidAppear(animated)
     }
     
     func updateUI(){

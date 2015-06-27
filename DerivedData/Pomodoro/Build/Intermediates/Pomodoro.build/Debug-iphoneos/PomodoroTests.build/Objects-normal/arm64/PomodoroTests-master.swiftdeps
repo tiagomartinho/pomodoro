@@ -1,0 +1,5 @@
+version: "Apple Swift version 1.2 (swiftlang-602.0.53.1 clang-602.0.53)"
+options: "08c36edb0053e7065b199790fdd118eb"
+inputs: 
+- "/Users/martinho/Desktop/Pomodoro/PomodoroTests/TimerTests.swift"
+- "/Users/martinho/Desktop/Pomodoro/Pomodoro/Timer.swift"
