@@ -17,11 +17,23 @@ class TimerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addObserverToForegroundAndBackgroundChanges()
         updateUI()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+    func addObserverToForegroundAndBackgroundChanges(){
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationDidEnterBackground:", name: UIApplicationDidEnterBackgroundNotification, object: nil)
+    }
+    
+    func applicationWillEnterForeground(notification: NSNotification){
+        if let backgroundDate = defaults.objectForKey(kUD_EnterBackgroundDate) as? NSDate {
+            println("timeIntervalSinceNow: \(abs(backgroundDate.timeIntervalSinceNow))")
+        }
+    }
+    
+    func applicationDidEnterBackground(notification: NSNotification){
+        defaults.setObject(NSDate(), forKey:kUD_EnterBackgroundDate)
     }
     
     func updateUI(){
@@ -33,7 +45,7 @@ class TimerViewController: UIViewController {
     
     @IBAction func toggleTimer() {
         timerIsRunning ? stopAndResetTimer() : startTimer()
-        timerIsRunning ? Scheduler().schedulePomodoriAndPauses() : Scheduler().cancelAllPomodoriAndPauses()
+//        timerIsRunning ? Scheduler().schedulePomodoriAndPauses() : Scheduler().cancelAllPomodoriAndPauses()
         updateUI()
     }
     

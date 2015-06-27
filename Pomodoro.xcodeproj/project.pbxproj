@@ -86,7 +86,6 @@
 		EA8FF4BD1B3D927E00F6F77B /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
-				EA8FF4C01B3D927E00F6F77B /* AppDelegate.swift */,
 				EA8FF4C21B3D927E00F6F77B /* TimerViewController.swift */,
 				EA8FF4E41B3D930800F6F77B /* Timer.swift */,
 				EABE3C231B3ECC3600233DD8 /* Scheduler.swift */,
@@ -99,11 +98,12 @@
 		EA8FF4BE1B3D927E00F6F77B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EA8FF4C01B3D927E00F6F77B /* AppDelegate.swift */,
+				EAAF6D3B1B3EF2E50088AB3A /* NSDateExtension.swift */,
 				EA8FF4E01B3D930800F6F77B /* Constants.swift */,
 				EA8FF4C71B3D927E00F6F77B /* Images.xcassets */,
 				EA8FF4C91B3D927E00F6F77B /* LaunchScreen.xib */,
 				EA8FF4BF1B3D927E00F6F77B /* Info.plist */,
-				EAAF6D3B1B3EF2E50088AB3A /* NSDateExtension.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

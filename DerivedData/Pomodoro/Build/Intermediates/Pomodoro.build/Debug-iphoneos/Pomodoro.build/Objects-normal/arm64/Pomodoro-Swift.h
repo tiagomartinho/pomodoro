@@ -97,8 +97,6 @@ SWIFT_CLASS("_TtC8Pomodoro11AppDelegate")
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (nonatomic) UIWindow * __nullable window;
 - (BOOL)application:(UIApplication * __nonnull)application didFinishLaunchingWithOptions:(NSDictionary * __nullable)launchOptions;
-- (void)applicationWillEnterForeground:(UIApplication * __nonnull)application;
-- (void)applicationWillResignActive:(UIApplication * __nonnull)application;
 - (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -113,6 +111,7 @@ SWIFT_CLASS("_TtC8Pomodoro11AppDelegate")
 @end
 
 @class NSTimer;
+@class NSNotification;
 @class UILabel;
 @class UIProgressView;
 @class UIButton;
@@ -127,7 +126,9 @@ SWIFT_CLASS("_TtC8Pomodoro19TimerViewController")
 @property (nonatomic) NSTimer * __nullable mainNSTimer;
 @property (nonatomic, readonly) BOOL timerIsRunning;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)animated;
+- (void)addObserverToForegroundAndBackgroundChanges;
+- (void)applicationWillEnterForeground:(NSNotification * __nonnull)notification;
+- (void)applicationDidEnterBackground:(NSNotification * __nonnull)notification;
 - (void)updateUI;
 - (IBAction)toggleTimer;
 - (void)startTimer;

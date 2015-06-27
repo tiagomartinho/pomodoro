@@ -127,6 +127,7 @@ SWIFT_CLASS("_TtC8Pomodoro19TimerViewController")
 @property (nonatomic) NSTimer * __nullable mainNSTimer;
 @property (nonatomic, readonly) BOOL timerIsRunning;
 - (void)viewDidLoad;
+- (void)applicationDidEnterBackground;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)updateUI;
 - (IBAction)toggleTimer;
