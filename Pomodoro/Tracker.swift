@@ -11,26 +11,20 @@ class Tracker{
         }
     }
     
-    var cumulativeDurationsInSeconds:[NSTimeInterval]{
-        var cumulativeDuration = 0
-        var durations = [NSTimeInterval]()
-        for interval in Intervals.intervals {
-            durations.append(NSTimeInterval(cumulativeDuration + interval.durationInSeconds))
-            cumulativeDuration += interval.durationInSeconds
-        }
-        return durations
-    }
-    
     var isRunning:Bool{
         return defaults.objectForKey(kUD_isTimerRunning) as? Bool ?? false
     }
     
     var time:String{
         if isRunning {
-            if description == .Pause {
+            switch description {
+            case .Pause:
                 return "5:00"
+            case .LongPause:
+                return "15:00"
+            case .Pomodoro:
+                return "24:59"
             }
-            return "24:59"
         }
         else{
             return "25:00"
@@ -38,23 +32,19 @@ class Tracker{
     }
     
     var description:IntervalType {
-        if(timeInterval>25*60){
-            return .Pause
-        }
-        
-        if(timeInterval>25*60*2){
-            return .LongPause
-        }
-        
-        return .Pomodoro
+        return Intervals().intervalType(timeInterval)
     }
     
     var progress:Double{
         if isRunning {
-            if description == .Pause {
+            switch description {
+            case .Pause:
                 return 100
+            case .LongPause:
+                return 100
+            case .Pomodoro:
+                return 99.93
             }
-            return 99.93
         }
         else{
             return 100

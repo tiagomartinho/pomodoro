@@ -1,15 +1,6 @@
 import UIKit
 
-struct Interval {
-    var name:String
-    var length:Int
-}
-
-class Scheduler {
-    let pomodoro = Interval(name: "WORK", length: 25)
-    let pause = Interval(name: "PAUSE", length: 5)
-    let longPause = Interval(name: "LONG PAUSE", length: 15)
-    
+class Scheduler {    
     init(){
         registerToSendTheUserNotifications()
     }
@@ -19,11 +10,10 @@ class Scheduler {
     }
     
     func schedulePomodoriAndPauses(){
-        let intervals = [pomodoro,pause,pomodoro,pause,pomodoro,pause,pomodoro,longPause]
         var date = 0
-        for interval in intervals {
-            date += interval.length
-            scheduleNotificationWithAlertBody(interval.name,AndFireDate: NSDate(timeIntervalSinceNow: NSTimeInterval(date)))
+        for interval in Intervals().intervals {
+            date += interval.duration
+            scheduleNotificationWithAlertBody(interval.message,AndFireDate: NSDate(timeIntervalSinceNow: NSTimeInterval(date)))
         }
     }
     
