@@ -7,20 +7,20 @@ class-members:
 - "window"
 - "application"
 top-level:
-- "UIResponder"
-- "UIApplicationDelegate"
-- "UIApplication"
 - !private "BooleanLiteralType"
-- "AnyObject"
-- "Bool"
+- "UIApplication"
+- "UIResponder"
 - "UIWindow"
+- "Bool"
+- "UIApplicationDelegate"
 - "NSObject"
+- "AnyObject"
 member-access:
-- "C8Pomodoro11AppDelegate"
+- "CSo8NSObject"
 - "PSs9AnyObject"
+- "C8Pomodoro11AppDelegate"
 - "PSo21UIApplicationDelegate"
 - "CSo11UIResponder"
-- "CSo8NSObject"
 dynamic-lookup:
 cross-module:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/Swift.swiftmodule"

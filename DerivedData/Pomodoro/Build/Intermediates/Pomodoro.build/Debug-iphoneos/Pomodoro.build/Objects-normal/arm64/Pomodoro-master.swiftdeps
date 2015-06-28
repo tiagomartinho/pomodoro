@@ -1,9 +1,11 @@
 version: "Apple Swift version 1.2 (swiftlang-602.0.53.1 clang-602.0.53)"
-options: "66d12551dab068d0428dee70e0151e5b"
+options: "25c406821092363b6b29c2b41e05c5ab"
 inputs: 
 - "/Users/martinho/Desktop/Pomodoro/Pomodoro/NSDateExtension.swift"
 - "/Users/martinho/Desktop/Pomodoro/Pomodoro/TimerViewController.swift"
 - "/Users/martinho/Desktop/Pomodoro/Pomodoro/AppDelegate.swift"
+- "/Users/martinho/Desktop/Pomodoro/Pomodoro/Intervals.swift"
 - "/Users/martinho/Desktop/Pomodoro/Pomodoro/Constants.swift"
 - "/Users/martinho/Desktop/Pomodoro/Pomodoro/Scheduler.swift"
 - "/Users/martinho/Desktop/Pomodoro/Pomodoro/Timer.swift"
+- "/Users/martinho/Desktop/Pomodoro/Pomodoro/Tracker.swift"

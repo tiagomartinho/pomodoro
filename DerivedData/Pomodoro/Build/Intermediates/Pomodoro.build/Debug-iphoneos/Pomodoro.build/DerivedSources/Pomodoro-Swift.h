@@ -129,6 +129,7 @@ SWIFT_CLASS("_TtC8Pomodoro19TimerViewController")
 - (void)addObserverToForegroundAndBackgroundChanges;
 - (void)applicationWillEnterForeground:(NSNotification * __nonnull)notification;
 - (void)applicationDidEnterBackground:(NSNotification * __nonnull)notification;
+- (void)updateState;
 - (void)updateUI;
 - (IBAction)toggleTimer;
 - (void)startTimer;

@@ -84,6 +84,7 @@ typedef struct _NSZone NSZone;
 #endif
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
+@import Foundation;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -91,21 +92,26 @@ typedef struct _NSZone NSZone;
 @class UIWindow;
 @class UIApplication;
 @class NSObject;
-@class UILocalNotification;
 
 SWIFT_CLASS("_TtC8Pomodoro11AppDelegate")
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (nonatomic) UIWindow * __nullable window;
 - (BOOL)application:(UIApplication * __nonnull)application didFinishLaunchingWithOptions:(NSDictionary * __nullable)launchOptions;
-@property (nonatomic, readonly) UIUserNotificationType needUIUserNotificationType;
-- (void)registerToSendTheUserNotifications:(UIApplication * __nonnull)application;
-- (void)application:(UIApplication * __nonnull)application didReceiveLocalNotification:(UILocalNotification * __nonnull)notification;
-- (void)applicationWillResignActive:(UIApplication * __nonnull)application;
-- (void)applicationDidEnterBackground:(UIApplication * __nonnull)application;
 - (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+@interface NSDate (SWIFT_EXTENSION(Pomodoro))
+@property (nonatomic, readonly) NSInteger second;
+@property (nonatomic, readonly) NSInteger minute;
+@property (nonatomic, readonly) NSInteger hour;
+@property (nonatomic, readonly) NSInteger day;
+@property (nonatomic, readonly) NSInteger month;
+@property (nonatomic, readonly) NSInteger year;
+@end
+
 @class NSTimer;
+@class NSNotification;
 @class UILabel;
 @class UIProgressView;
 @class UIButton;
@@ -120,7 +126,10 @@ SWIFT_CLASS("_TtC8Pomodoro19TimerViewController")
 @property (nonatomic) NSTimer * __nullable mainNSTimer;
 @property (nonatomic, readonly) BOOL timerIsRunning;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)animated;
+- (void)addObserverToForegroundAndBackgroundChanges;
+- (void)applicationWillEnterForeground:(NSNotification * __nonnull)notification;
+- (void)applicationDidEnterBackground:(NSNotification * __nonnull)notification;
+- (void)updateState;
 - (void)updateUI;
 - (IBAction)toggleTimer;
 - (void)startTimer;

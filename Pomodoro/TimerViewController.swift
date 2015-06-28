@@ -7,18 +7,18 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var timerProgress: UIProgressView!
     @IBOutlet weak var toggleTimerButton: UIButton!
     
-    var timer = Timer(minutes: 1, seconds: 0)
+    var timer = Timer(minutes: 5, seconds: 0)
     
     var mainNSTimer:NSTimer?
     
     var timerIsRunning:Bool{
-        return mainNSTimer != nil
+        return defaults.objectForKey(kUD_isTimerRunning) as? Bool ?? false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addObserverToForegroundAndBackgroundChanges()
-        updateUI()
+        updateState()
     }
     
     func addObserverToForegroundAndBackgroundChanges(){
@@ -27,13 +27,20 @@ class TimerViewController: UIViewController {
     }
     
     func applicationWillEnterForeground(notification: NSNotification){
-        if let backgroundDate = defaults.objectForKey(kUD_EnterBackgroundDate) as? NSDate {
-            println("timeIntervalSinceNow: \(abs(backgroundDate.timeIntervalSinceNow))")
-        }
+        updateState()
     }
     
     func applicationDidEnterBackground(notification: NSNotification){
-        defaults.setObject(NSDate(), forKey:kUD_EnterBackgroundDate)
+        stopAndResetTimer()
+    }
+    
+    func updateState(){
+        if let isTimerRunning = defaults.objectForKey(kUD_isTimerRunning) as? Bool, let backgroundDate = defaults.objectForKey(kUD_StartDate) as? NSDate {
+            if(isTimerRunning){
+                println("timeIntervalSinceNow: \(abs(backgroundDate.timeIntervalSinceNow))")
+                startTimer()
+            }
+        }
     }
     
     func updateUI(){
@@ -50,6 +57,8 @@ class TimerViewController: UIViewController {
     }
     
     func startTimer(){
+        defaults.setObject(true, forKey:kUD_isTimerRunning)
+        defaults.setObject(NSDate(), forKey:kUD_StartDate)
         mainNSTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "tick:", userInfo: nil, repeats: true)
     }
     
@@ -61,6 +70,7 @@ class TimerViewController: UIViewController {
     
     func stopTimer(){
         mainNSTimer?.invalidate()
+        defaults.setObject(false, forKey:kUD_isTimerRunning)
     }
     
     func tick(nsTimer: NSTimer) {

@@ -1,12 +1,13 @@
 ### Swift dependencies file v0 ###
 provides:
 - "defaults"
-- "kUD_EnterBackgroundDate"
+- "kUD_StartDate"
+- "kUD_isTimerRunning"
 nominals:
 class-members:
 top-level:
-- "NSUserDefaults"
 - "StringLiteralType"
+- "NSUserDefaults"
 - "String"
 member-access:
 - "CSo14NSUserDefaults"

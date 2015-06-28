@@ -92,21 +92,26 @@ typedef struct _NSZone NSZone;
 @class UIWindow;
 @class UIApplication;
 @class NSObject;
-@class UILocalNotification;
 
 SWIFT_CLASS("_TtC8Pomodoro11AppDelegate")
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (nonatomic) UIWindow * __nullable window;
 - (BOOL)application:(UIApplication * __nonnull)application didFinishLaunchingWithOptions:(NSDictionary * __nullable)launchOptions;
-@property (nonatomic, readonly) UIUserNotificationType needUIUserNotificationType;
-- (void)registerToSendTheUserNotifications:(UIApplication * __nonnull)application;
-- (void)application:(UIApplication * __nonnull)application didReceiveLocalNotification:(UILocalNotification * __nonnull)notification;
-- (void)applicationWillResignActive:(UIApplication * __nonnull)application;
-- (void)applicationDidEnterBackground:(UIApplication * __nonnull)application;
 - (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+@interface NSDate (SWIFT_EXTENSION(Pomodoro))
+@property (nonatomic, readonly) NSInteger second;
+@property (nonatomic, readonly) NSInteger minute;
+@property (nonatomic, readonly) NSInteger hour;
+@property (nonatomic, readonly) NSInteger day;
+@property (nonatomic, readonly) NSInteger month;
+@property (nonatomic, readonly) NSInteger year;
+@end
+
 @class NSTimer;
+@class NSNotification;
 @class UILabel;
 @class UIProgressView;
 @class UIButton;
@@ -121,22 +126,16 @@ SWIFT_CLASS("_TtC8Pomodoro19TimerViewController")
 @property (nonatomic) NSTimer * __nullable mainNSTimer;
 @property (nonatomic, readonly) BOOL timerIsRunning;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)animated;
-- (void)schedulePomodoriAndPauses;
-- (void)schedulePomodori;
-- (void)schedulePauses;
-- (void)scheduleMultipleNotificationWithAlertBody:(NSString * __nonnull)alertBody AndTimeInterval:(NSInteger)timeInterval AndRepeats:(NSInteger)repeats;
-- (void)scheduleNotificationWithAlertBody:(NSString * __nonnull)alertBody AndTimeInterval:(NSTimeInterval)timeInterval;
-- (void)cancelAllPomodoriAndPauses;
+- (void)addObserverToForegroundAndBackgroundChanges;
+- (void)applicationWillEnterForeground:(NSNotification * __nonnull)notification;
+- (void)applicationDidEnterBackground:(NSNotification * __nonnull)notification;
+- (void)updateState;
 - (void)updateUI;
 - (IBAction)toggleTimer;
 - (void)startTimer;
 - (void)stopAndResetTimer;
 - (void)stopTimer;
 - (void)tick:(NSTimer * __nonnull)nsTimer;
-- (void)flashTimer:(NSInteger)count;
-- (void)flashTimerLabelAndVibrate:(NSTimer * __nonnull)nsTimer;
-- (void)toggleTimerLabelBetweenRedAndBlack;
 - (void)vibratePhone;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
