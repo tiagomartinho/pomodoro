@@ -20,19 +20,11 @@ class Tracker{
     }
     
     var time:String{
-        if isRunning {
-            switch description {
-            case .Pause:
-                return "5:00"
-            case .LongPause:
-                return "15:00"
-            case .Pomodoro:
-                return "24:59"
-            }
-        }
-        else{
-            return "25:00"
-        }
+        let intervalDurationInSeconds = Double(Intervals().intervalDurationInSeconds(timeInterval))
+        let timeLeft = Int(intervalDurationInSeconds - timeInterval)
+        let minutesLeft = timeLeft/60
+        let secondsLeft = timeLeft%60
+        return String.formatTimer(minutesLeft, seconds: secondsLeft)
     }
     
     var progress:Double{

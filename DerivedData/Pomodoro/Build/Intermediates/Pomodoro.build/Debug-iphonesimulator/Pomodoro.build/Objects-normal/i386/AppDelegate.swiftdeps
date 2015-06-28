@@ -4,21 +4,21 @@ provides:
 nominals:
 - "C8Pomodoro11AppDelegate"
 class-members:
-- "application"
 - "window"
+- "application"
 top-level:
 - "Bool"
-- "AnyObject"
-- "UIApplicationDelegate"
 - "UIResponder"
-- "NSObject"
 - "UIWindow"
+- "NSObject"
 - "UIApplication"
 - !private "BooleanLiteralType"
+- "AnyObject"
+- "UIApplicationDelegate"
 member-access:
-- "CSo11UIResponder"
 - "PSo21UIApplicationDelegate"
 - "PSs9AnyObject"
+- "CSo11UIResponder"
 - "C8Pomodoro11AppDelegate"
 - "CSo8NSObject"
 dynamic-lookup:

@@ -43,6 +43,6 @@ class Timer:Printable{
     }
     
     var description: String {
-        return String(format: "%02d", minutes) + ":" + String(format: "%02d", seconds)
+        return String.formatTimer(minutes, seconds: seconds)
     }
 }

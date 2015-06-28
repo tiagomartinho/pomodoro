@@ -20,19 +20,28 @@ class Intervals{
     }
     
     func intervalType(timeInterval:NSTimeInterval)->IntervalType{
-        if let intervalPosition = intervalPosition(timeInterval){
-            return intervals[intervalPosition].type
+        if let interval = intervalAtTimeInterval(timeInterval){
+            return interval.type
         }
         else {
             return .Pomodoro
         }
     }
     
-    private func intervalPosition(timeInterval:NSTimeInterval)->Int?{
+    func intervalDurationInSeconds(timeInterval:NSTimeInterval)->Int{
+        if let interval = intervalAtTimeInterval(timeInterval){
+            return interval.durationInSeconds
+        }
+        else {
+            return 25
+        }
+    }
+    
+    private func intervalAtTimeInterval(timeInterval:NSTimeInterval)->Interval?{
         var i = 0
         for interval in intervals {
             if timeInterval < Double(interval.cumulativeDuration) {
-                return i
+                return intervals[i]
             }
             i++
         }
