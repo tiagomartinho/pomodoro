@@ -15,6 +15,10 @@ class Tracker{
         return defaults.objectForKey(kUD_isTimerRunning) as? Bool ?? false
     }
     
+    var description:IntervalType {
+        return Intervals().intervalType(timeInterval)
+    }
+    
     var time:String{
         if isRunning {
             switch description {
@@ -29,10 +33,6 @@ class Tracker{
         else{
             return "25:00"
         }
-    }
-    
-    var description:IntervalType {
-        return Intervals().intervalType(timeInterval)
     }
     
     var progress:Double{

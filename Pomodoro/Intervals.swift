@@ -1,42 +1,53 @@
 import Foundation
 
-struct Intervals{
-
-    static let pomodoro = Interval(type:.Pomodoro,duration: 25,message:"WORK")
-    static let pause = Interval(type:.Pause,duration: 5,message:"PAUSE")
-    static let longPause = Interval(type:.LongPause,duration: 15,message:"LONG PAUSE")
+class Intervals{
     
-    let intervals:[Interval] = [pomodoro,pause,pomodoro,pause,pomodoro,pause,pomodoro,longPause]
+    static let pomodoro = Interval(type:.Pomodoro,duration: 25,message:"WORK",cumulativeDuration:0)
+    static let pause = Interval(type:.Pause,duration: 5,message:"PAUSE",cumulativeDuration:0)
+    static let longPause = Interval(type:.LongPause,duration: 15,message:"LONG PAUSE",cumulativeDuration:0)
     
-    var cumulativeDurationsInSeconds:[Int]{
+    let reference = [pomodoro,pause,pomodoro,pause,pomodoro,pause,pomodoro,longPause]
+    private var intervals=[Interval]()
+    
+    init(){
         var cumulativeDuration = 0
-        var durations = [Int]()
-        for interval in intervals {
-            durations.append(cumulativeDuration + interval.durationInSeconds)
+        for interval in reference {
+            var intervalWithCumulativeDuration = interval
+            intervalWithCumulativeDuration.cumulativeDuration = cumulativeDuration + interval.durationInSeconds
+            intervals.append(intervalWithCumulativeDuration)
             cumulativeDuration += interval.durationInSeconds
         }
-        return durations
     }
     
     func intervalType(timeInterval:NSTimeInterval)->IntervalType{
+        if let intervalPosition = intervalPosition(timeInterval){
+            return intervals[intervalPosition].type
+        }
+        else {
+            return .Pomodoro
+        }
+    }
+    
+    private func intervalPosition(timeInterval:NSTimeInterval)->Int?{
         var i = 0
-        for duration in cumulativeDurationsInSeconds {
-            if timeInterval < Double(duration) {
-                return intervals[i].type
+        for interval in intervals {
+            if timeInterval < Double(interval.cumulativeDuration) {
+                return i
             }
             i++
         }
-        return .Pomodoro
+        return nil
     }
-}
-
-struct Interval {
-    let type:IntervalType
-    let duration:Int
-    var durationInSeconds:Int{
-        return duration*60
+    
+    struct Interval {
+        let type:IntervalType
+        let duration:Int
+        var durationInSeconds:Int{
+            return duration*60
+        }
+        let message:String
+        var cumulativeDuration:Int
     }
-    let message:String
 }
 
 enum IntervalType{

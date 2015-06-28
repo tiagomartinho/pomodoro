@@ -11,7 +11,7 @@ class Scheduler {
     
     func schedulePomodoriAndPauses(){
         var date = 0
-        for interval in Intervals().intervals {
+        for interval in Intervals().reference {
             date += interval.duration
             scheduleNotificationWithAlertBody(interval.message,AndFireDate: NSDate(timeIntervalSinceNow: NSTimeInterval(date)))
         }
