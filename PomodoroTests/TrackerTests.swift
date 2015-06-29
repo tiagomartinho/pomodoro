@@ -39,52 +39,51 @@ class TrackerTests: XCTestCase {
         XCTAssertEqual(tracker.isRunning, false)
     }
     
-    func testDescriptionChangesCorretlyAfterFirstPomdoro() {
-        let date = NSDate(timeIntervalSinceNow: -pomodoro)
-        assertDescription(.Pause,AtDate:date)
-    }
-    
-    func testDescriptionChangesCorretlyAfterFirstPomdoroAndFirstPause() {
-        let date = NSDate(timeIntervalSinceNow: -(pomodoro+pause))
+    func testStateAfterOneSecond() {
+        let date = NSDate()
+        assertTime("24:59",AtDate:date)
         assertDescription(.Pomodoro,AtDate:date)
     }
     
-    func testDescriptionChangesCorretlyToLongPause() {
+    func testStateAfterHalfPomdoro() {
+        let date = NSDate(timeIntervalSinceNow: -halfPomodoro)
+        assertTime("12:29",AtDate:date)
+        assertDescription(.Pomodoro,AtDate:date)
+    }
+    
+    func testStateAfterFirstPomdoro() {
+        let date = NSDate(timeIntervalSinceNow: -pomodoro)
+        assertTime("04:59",AtDate:date)
+        assertDescription(.Pause,AtDate:date)
+    }
+    
+    func testStateAfterFirstPomdoroAndFirstPause() {
+        let date = NSDate(timeIntervalSinceNow: -(pomodoro+pause))
+        assertTime("24:59",AtDate:date)
+        assertDescription(.Pomodoro,AtDate:date)
+    }
+    
+    func testStateAtLongPause() {
         let date = NSDate(timeIntervalSinceNow: -(4*pomodoro+3*pause))
+        assertTime("14:59",AtDate:date)
         assertDescription(.LongPause,AtDate:date)
     }
     
-    func testDurationChangesCorretlyAfterOneSecond() {
-        assertTime("24:59",AtDate:NSDate())
-    }
-    
-    func testDurationChangesCorretlyAtFirstPomodoro() {
-        let date = NSDate(timeIntervalSinceNow: -halfPomodoro)
-        assertTime("12:29",AtDate:date)
-    }
-    
-    func testDurationChangesCorretlyAtFirstPause() {
-        let date = NSDate(timeIntervalSinceNow: -pomodoro)
-        assertTime("04:59",AtDate:date)
-    }
-    
-    func testDurationChangesCorretlyAtLongPause() {
-        let date = NSDate(timeIntervalSinceNow: -(4*pomodoro+3*pause))
-        assertTime("14:59",AtDate:date)
-    }
-    
-    func testDurationWayAfterTimerIsOver() {
+    func testStateWayAfterTimerIsOver() {
         let date = NSDate(timeIntervalSinceNow: -(45*pomodoro+32*pause+10*longPause))
         assertTime("00:00",AtDate:date)
+        assertDescription(.Pomodoro,AtDate:date)
     }
     
-    func testDurationWayBeforeTimer() {
+    func testStateWayBeforeTimer() {
         let date = NSDate(timeIntervalSinceNow: 45*pomodoro+32*pause+10*longPause)
         assertTime("00:00",AtDate:date)
+        assertDescription(.Pomodoro,AtDate:date)
     }
     
-    func testDurationAtZeroSeconds() {
+    func testStateRightBeforeTimerEnds() {
         let date = NSDate(timeIntervalSinceNow: -(4*pomodoro+3*pause+longPause-1))
         assertTime("00:00",AtDate:date)
+        assertDescription(.LongPause,AtDate:date)
     }
 }

@@ -68,6 +68,19 @@ class Intervals{
     }
 }
 
-enum IntervalType{
+enum IntervalType:Printable{
     case Pomodoro,Pause,LongPause
+    
+    var description:String{
+        get{
+            switch self{
+            case .Pomodoro:
+                return "Pomodoro"
+            case .Pause:
+                return "Pause"
+            case .LongPause:
+                return "LongPause"
+            }
+        }
+    }
 }
