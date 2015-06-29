@@ -4,9 +4,20 @@ class TrackerTests: XCTestCase {
     
     let tracker = Tracker()
     
-    let pomodoroTime = Double(Intervals.pomodoro.durationInSeconds)
-    let pauseTime = Double(Intervals.pause.durationInSeconds)
+    let pomodoro = Double(Intervals.pomodoro.durationInSeconds)
+    let halfPomodoro = Double(Intervals.pomodoro.durationInSeconds)/2
+    let pause = Double(Intervals.pause.durationInSeconds)
 
+    func assertDescription(description:IntervalType, AtDate date:NSDate){
+        tracker.start(date)
+        XCTAssertEqual(tracker.description,description)
+    }
+    
+    func assertTime(time:String, AtDate date:NSDate){
+        tracker.start(date)
+        XCTAssertEqual(tracker.time,time)
+    }
+    
     override func setUp() {
         defaults.setObject(nil, forKey:kUD_isTimerRunning)
         defaults.setObject(nil, forKey:kUD_StartDate)
@@ -28,40 +39,36 @@ class TrackerTests: XCTestCase {
     }
     
     func testDescriptionChangesCorretlyAfterFirstPomdoro() {
-        let date = NSDate(timeIntervalSinceNow: -pomodoroTime)
-        tracker.start(date)
-        XCTAssertEqual(tracker.description,.Pause)
+        let date = NSDate(timeIntervalSinceNow: -pomodoro)
+        assertDescription(.Pause,AtDate:date)
     }
     
     func testDescriptionChangesCorretlyAfterFirstPomdoroAndFirstPause() {
-        let date = NSDate(timeIntervalSinceNow: -(pomodoroTime+pauseTime))
-        tracker.start(date)
-        XCTAssertEqual(tracker.description,.Pomodoro)
+        let date = NSDate(timeIntervalSinceNow: -(pomodoro+pause))
+        assertDescription(.Pomodoro,AtDate:date)
     }
     
     func testDescriptionChangesCorretlyToLongPause() {
-        let date = NSDate(timeIntervalSinceNow: -(4*pomodoroTime+3*pauseTime))
-        tracker.start(date)
-        XCTAssertEqual(tracker.description,.LongPause)
+        let date = NSDate(timeIntervalSinceNow: -(4*pomodoro+3*pause))
+        assertDescription(.LongPause,AtDate:date)
     }
     
     func testDurationChangesCorretlyAfterOneSecond() {
-        let date = NSDate()
-        tracker.start(date)
-        XCTAssertEqual(tracker.time,"24:59")
+        assertTime("24:59",AtDate:NSDate())
     }
     
     func testDurationChangesCorretlyAtFirstPomodoro() {
-        let halfPomodoro = pomodoroTime/2
         let date = NSDate(timeIntervalSinceNow: -halfPomodoro)
-        tracker.start(date)
-        XCTAssertEqual(tracker.time,"12:29")
+        assertTime("12:29",AtDate:date)
     }
     
     func testDurationChangesCorretlyAtFirstPause() {
-        let pomodoro = pomodoroTime
         let date = NSDate(timeIntervalSinceNow: -pomodoro)
-        tracker.start(date)
-        XCTAssertEqual(tracker.time,"04:59")
+        assertTime("04:59",AtDate:date)
+    }
+    
+    func testDurationChangesCorretlyAtLongPause() {
+        let date = NSDate(timeIntervalSinceNow: -(4*pomodoro+3*pause))
+        assertTime("14:59",AtDate:date)
     }
 }
