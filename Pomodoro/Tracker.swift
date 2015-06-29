@@ -22,10 +22,16 @@ class Tracker{
     var time:String{
         let intervalDurationInSeconds = Double(Intervals().intervalDurationInSeconds(timeInterval))
         let previousIntervals = Double(Intervals().cumulativeIntervalDurationInSeconds(timeInterval)) - intervalDurationInSeconds
-        let timeLeft = Int(intervalDurationInSeconds - (timeInterval-previousIntervals))
-        let minutesLeft = timeLeft/60
-        let secondsLeft = timeLeft%60
-        return String.formatTimer(minutesLeft, seconds: secondsLeft)
+        let timePassed = timeInterval-previousIntervals
+        let timeLeft = Int(intervalDurationInSeconds - timePassed)
+        if timeLeft > 0 {
+            let minutesLeft = timeLeft/60
+            let secondsLeft = timeLeft%60
+            return String.formatTimer(minutesLeft, seconds: secondsLeft)
+        }
+        else {
+            return "00:00"
+        }
     }
     
     var progress:Double{

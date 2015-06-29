@@ -7,6 +7,7 @@ class TrackerTests: XCTestCase {
     let pomodoro = Double(Intervals.pomodoro.durationInSeconds)
     let halfPomodoro = Double(Intervals.pomodoro.durationInSeconds)/2
     let pause = Double(Intervals.pause.durationInSeconds)
+    let longPause = Double(Intervals.longPause.durationInSeconds)
 
     func assertDescription(description:IntervalType, AtDate date:NSDate){
         tracker.start(date)
@@ -70,5 +71,20 @@ class TrackerTests: XCTestCase {
     func testDurationChangesCorretlyAtLongPause() {
         let date = NSDate(timeIntervalSinceNow: -(4*pomodoro+3*pause))
         assertTime("14:59",AtDate:date)
+    }
+    
+    func testDurationWayAfterTimerIsOver() {
+        let date = NSDate(timeIntervalSinceNow: -(45*pomodoro+32*pause+10*longPause))
+        assertTime("00:00",AtDate:date)
+    }
+    
+    func testDurationWayBeforeTimer() {
+        let date = NSDate(timeIntervalSinceNow: 45*pomodoro+32*pause+10*longPause)
+        assertTime("00:00",AtDate:date)
+    }
+    
+    func testDurationAtZeroSeconds() {
+        let date = NSDate(timeIntervalSinceNow: -(4*pomodoro+3*pause+longPause-1))
+        assertTime("00:00",AtDate:date)
     }
 }
