@@ -21,7 +21,8 @@ class Tracker{
     
     var time:String{
         let intervalDurationInSeconds = Double(Intervals().intervalDurationInSeconds(timeInterval))
-        let timeLeft = Int(intervalDurationInSeconds - timeInterval)
+        let previousIntervals = Double(Intervals().cumulativeIntervalDurationInSeconds(timeInterval)) - intervalDurationInSeconds
+        let timeLeft = Int(intervalDurationInSeconds - (timeInterval-previousIntervals))
         let minutesLeft = timeLeft/60
         let secondsLeft = timeLeft%60
         return String.formatTimer(minutesLeft, seconds: secondsLeft)

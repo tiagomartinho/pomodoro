@@ -45,9 +45,23 @@ class TrackerTests: XCTestCase {
         XCTAssertEqual(tracker.description,.LongPause)
     }
     
-    func testDurationChangesCorretlyAfterFirstPomdoro() {
-        let date = NSDate(timeIntervalSinceNow: -(pomodoroTime/2))
+    func testDurationChangesCorretlyAfterOneSecond() {
+        let date = NSDate()
         tracker.start(date)
-        XCTAssertEqual(tracker.time,"12:50")
+        XCTAssertEqual(tracker.time,"24:59")
+    }
+    
+    func testDurationChangesCorretlyAtFirstPomodoro() {
+        let halfPomodoro = pomodoroTime/2
+        let date = NSDate(timeIntervalSinceNow: -halfPomodoro)
+        tracker.start(date)
+        XCTAssertEqual(tracker.time,"12:29")
+    }
+    
+    func testDurationChangesCorretlyAtFirstPause() {
+        let pomodoro = pomodoroTime
+        let date = NSDate(timeIntervalSinceNow: -pomodoro)
+        tracker.start(date)
+        XCTAssertEqual(tracker.time,"04:59")
     }
 }

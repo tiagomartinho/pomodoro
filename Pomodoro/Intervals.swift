@@ -37,6 +37,15 @@ class Intervals{
         }
     }
     
+    func cumulativeIntervalDurationInSeconds(timeInterval:NSTimeInterval)->Int{
+        if let interval = intervalAtTimeInterval(timeInterval){
+            return interval.cumulativeDuration
+        }
+        else {
+            return 0
+        }
+    }
+    
     private func intervalAtTimeInterval(timeInterval:NSTimeInterval)->Interval?{
         var i = 0
         for interval in intervals {
