@@ -24,29 +24,26 @@ class Tracker{
         let previousIntervals = Double(Intervals().cumulativeIntervalDurationInSeconds(timeInterval)) - intervalDurationInSeconds
         let timePassed = timeInterval-previousIntervals
         let timeLeft = Int(intervalDurationInSeconds - timePassed)
-        if timeLeft > 0 {
+        if timeLeft >= 0 {
             let minutesLeft = timeLeft/60
             let secondsLeft = timeLeft%60
             return String.formatTimer(minutesLeft, seconds: secondsLeft)
         }
         else {
-            return "00:00"
+            return "25:00"
         }
     }
     
     var progress:Double{
-        if isRunning {
-            switch description {
-            case .Pause:
-                return 100
-            case .LongPause:
-                return 100
-            case .Pomodoro:
-                return 99.93
-            }
+        let intervalDurationInSeconds = Double(Intervals().intervalDurationInSeconds(timeInterval))
+        let previousIntervals = Double(Intervals().cumulativeIntervalDurationInSeconds(timeInterval)) - intervalDurationInSeconds
+        let timePassed = timeInterval-previousIntervals
+        let timeLeft = intervalDurationInSeconds - timePassed
+        if timeLeft >= 0 && intervalDurationInSeconds > 0{
+            return (timeLeft/intervalDurationInSeconds) * 100
         }
-        else{
-            return 100
+        else {
+            return 100.0
         }
     }
     

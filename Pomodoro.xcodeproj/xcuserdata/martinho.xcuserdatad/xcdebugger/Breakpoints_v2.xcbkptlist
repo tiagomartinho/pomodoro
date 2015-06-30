@@ -6,49 +6,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pomodoro/Tracker.swift"
-            timestampString = "457301969.803932"
+            timestampString = "457382048.268362"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "Tracker"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pomodoro.Tracker.time.getter : Swift.String"
-                  moduleName = "Pomodoro"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/martinho/Desktop/Pomodoro/Pomodoro/Tracker.swift"
-                  timestampString = "457301635.072149"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "673">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PomodoroTests.Tracker.time.getter : Swift.String"
-                  moduleName = "PomodoroTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/martinho/Desktop/Pomodoro/Pomodoro/Tracker.swift"
-                  timestampString = "457301635.273021"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "673">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
