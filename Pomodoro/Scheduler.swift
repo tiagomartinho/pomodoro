@@ -12,7 +12,7 @@ class Scheduler {
     func schedulePomodoriAndPauses(){
         var date = 0
         for interval in Intervals().reference {
-            date += interval.duration
+            date += interval.duration * 60
             scheduleNotificationWithAlertBody(interval.message,AndFireDate: NSDate(timeIntervalSinceNow: NSTimeInterval(date)))
         }
     }

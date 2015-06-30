@@ -4,23 +4,23 @@ provides:
 nominals:
 - "C8Pomodoro11AppDelegate"
 class-members:
-- "window"
 - "application"
+- "window"
 top-level:
-- !private "BooleanLiteralType"
-- "UIApplication"
-- "UIResponder"
 - "UIWindow"
 - "Bool"
-- "UIApplicationDelegate"
 - "NSObject"
 - "AnyObject"
+- "UIApplication"
+- !private "BooleanLiteralType"
+- "UIResponder"
+- "UIApplicationDelegate"
 member-access:
 - "CSo8NSObject"
-- "PSs9AnyObject"
-- "C8Pomodoro11AppDelegate"
-- "PSo21UIApplicationDelegate"
 - "CSo11UIResponder"
+- "C8Pomodoro11AppDelegate"
+- "PSs9AnyObject"
+- "PSo21UIApplicationDelegate"
 dynamic-lookup:
 cross-module:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/Swift.swiftmodule"

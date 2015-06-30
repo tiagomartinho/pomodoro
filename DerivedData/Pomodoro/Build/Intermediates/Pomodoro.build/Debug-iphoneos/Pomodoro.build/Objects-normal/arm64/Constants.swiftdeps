@@ -10,8 +10,8 @@ top-level:
 - "NSUserDefaults"
 - "String"
 member-access:
-- "CSo14NSUserDefaults"
 - "CSo8NSObject"
+- "CSo14NSUserDefaults"
 dynamic-lookup:
 cross-module:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/Swift.swiftmodule"

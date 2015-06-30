@@ -8,6 +8,7 @@ class TrackerViewController: UIViewController {
     @IBOutlet weak var toggleTimerButton: UIButton!
     
     let tracker = Tracker()
+    let scheduler = Scheduler()
     
     var mainNSTimer:NSTimer?
     
@@ -40,7 +41,14 @@ class TrackerViewController: UIViewController {
     }
     
     @IBAction func toggleTimer() {
-        tracker.isRunning ? tracker.stop() : tracker.start()
+        if tracker.isRunning {
+            tracker.stop()
+            scheduler.cancelAllPomodoriAndPauses()
+        }
+        else {
+            tracker.start()
+            scheduler.schedulePomodoriAndPauses()
+        }
         updateUI()
     }
     
