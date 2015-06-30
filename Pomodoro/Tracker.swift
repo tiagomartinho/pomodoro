@@ -35,16 +35,22 @@ class Tracker{
     }
     
     var progress:Double{
-        let intervalDurationInSeconds = Double(Intervals().intervalDurationInSeconds(timeInterval))
-        let previousIntervals = Double(Intervals().cumulativeIntervalDurationInSeconds(timeInterval)) - intervalDurationInSeconds
-        let timePassed = timeInterval-previousIntervals
-        let timeLeft = intervalDurationInSeconds - timePassed
-        if timeLeft >= 0 && intervalDurationInSeconds > 0{
-            return (timeLeft/intervalDurationInSeconds) * 100
+        if timeLeft >= 0 && currentIntervalDuration > 0{
+            return (timeLeft/currentIntervalDuration) * 100
         }
         else {
             return 100.0
         }
+    }
+    
+    var currentIntervalDuration:Double{
+        return Double(Intervals().intervalDurationInSeconds(timeInterval))
+    }
+    
+    var timeLeft:Double {
+        let previousIntervals = Double(Intervals().cumulativeIntervalDurationInSeconds(timeInterval)) - currentIntervalDuration
+        let timePassed = timeInterval-previousIntervals
+        return currentIntervalDuration - timePassed
     }
     
     func start(){
