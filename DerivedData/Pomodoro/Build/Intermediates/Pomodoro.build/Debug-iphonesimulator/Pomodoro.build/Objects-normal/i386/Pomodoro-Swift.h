@@ -118,24 +118,21 @@ SWIFT_CLASS("_TtC8Pomodoro11AppDelegate")
 @class NSBundle;
 @class NSCoder;
 
-SWIFT_CLASS("_TtC8Pomodoro19TimerViewController")
-@interface TimerViewController : UIViewController
+SWIFT_CLASS("_TtC8Pomodoro21TrackerViewController")
+@interface TrackerViewController : UIViewController
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified timerLabel;
 @property (nonatomic, weak) IBOutlet UIProgressView * __null_unspecified timerProgress;
 @property (nonatomic, weak) IBOutlet UIButton * __null_unspecified toggleTimerButton;
 @property (nonatomic) NSTimer * __nullable mainNSTimer;
-@property (nonatomic, readonly) BOOL timerIsRunning;
 - (void)viewDidLoad;
 - (void)addObserverToForegroundAndBackgroundChanges;
 - (void)applicationWillEnterForeground:(NSNotification * __nonnull)notification;
 - (void)applicationDidEnterBackground:(NSNotification * __nonnull)notification;
-- (void)updateState;
 - (void)updateUI;
 - (IBAction)toggleTimer;
 - (void)startTimer;
-- (void)stopAndResetTimer;
-- (void)stopTimer;
 - (void)tick:(NSTimer * __nonnull)nsTimer;
+- (void)stopTimer;
 - (void)vibratePhone;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;

@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Timer View Controller-->
+        <!--Tracker View Controller-->
         <scene sceneID="4TS-p3-zRy">
             <objects>
-                <viewController id="wfw-CA-PiP" customClass="TimerViewController" customModule="Pomodoro_cc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wfw-CA-PiP" customClass="TrackerViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EAe-dQ-cRN"/>
                         <viewControllerLayoutGuide type="bottom" id="eGe-ID-IHo"/>
@@ -93,20 +93,20 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="JBv-9Y-ufD"/>
+                                <exclude reference="NWO-lQ-kDj"/>
                                 <exclude reference="jEz-9j-wwa"/>
                                 <exclude reference="qbX-u4-ybu"/>
-                                <exclude reference="NWO-lQ-kDj"/>
                                 <exclude reference="xcg-Aj-1cr"/>
-                                <exclude reference="JBv-9Y-ufD"/>
                                 <exclude reference="6Fd-am-FMD"/>
-                                <exclude reference="lX5-x7-0Vq"/>
-                                <exclude reference="HRq-kX-w4x"/>
                                 <exclude reference="EgS-rA-o9S"/>
+                                <exclude reference="HRq-kX-w4x"/>
                                 <exclude reference="bF4-kh-Kla"/>
                                 <exclude reference="cAc-P1-lQv"/>
+                                <exclude reference="lX5-x7-0Vq"/>
                                 <exclude reference="ChW-p6-VXG"/>
-                                <exclude reference="zB9-Bu-LmR"/>
                                 <exclude reference="Doa-Sm-y3I"/>
+                                <exclude reference="zB9-Bu-LmR"/>
                                 <exclude reference="Hym-N9-USJ"/>
                             </mask>
                         </variation>
@@ -119,6 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ng-Vy-Rvl" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="91" y="116"/>
         </scene>
     </scenes>
 </document>

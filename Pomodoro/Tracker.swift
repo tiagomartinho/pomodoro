@@ -24,11 +24,11 @@ class Tracker{
         return String.formatTimer(minutesLeft, seconds: secondsLeft)
     }
     
-    var progress:Double{
+    var progress:Float{
         if timeLeft >= 0 && currentIntervalDuration > 0{
-            return (timeLeft/currentIntervalDuration) * 100
+            return Float(timeLeft/currentIntervalDuration)
         }
-        return 100.0
+        return 1.0
     }
     
     private var timeInterval:NSTimeInterval{
