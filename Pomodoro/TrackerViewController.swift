@@ -60,9 +60,11 @@ class TrackerViewController: UIViewController {
                 progressBar.progress = tracker.progress
                 if tracker.description == IntervalType.Pomodoro {
                     progressBar.tintColor = UIColor.redColor()
+                    progressBar.alpha = 1.0
                 }
                 else{
                     progressBar.tintColor = UIColor.greenColor()
+                    progressBar.alpha = 0.35
                 }
             }
             else {
