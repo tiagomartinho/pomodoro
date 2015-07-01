@@ -37,6 +37,12 @@ class TrackerViewController: UIViewController {
         timerLabel.text = tracker.time
         timerLabel.textColor = UIColor.blackColor()
         timerProgress.progress = tracker.progress
+        if tracker.description == IntervalType.Pomodoro {
+            timerProgress.tintColor = UIColor.redColor()
+        }
+        else{
+            timerProgress.tintColor = UIColor.greenColor()
+        }
         toggleTimerButton.setTitle(tracker.isRunning ? "Stop" : "Start", forState: UIControlState.Normal)
     }
     

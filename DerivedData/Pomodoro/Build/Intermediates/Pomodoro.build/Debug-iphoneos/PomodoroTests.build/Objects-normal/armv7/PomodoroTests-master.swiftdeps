@@ -1,10 +1,8 @@
 version: "Apple Swift version 1.2 (swiftlang-602.0.53.1 clang-602.0.53)"
-options: "61d05ccabf011f276d41ec23ec0f5784"
+options: "cfa5417c5cbec15bfd8eaee263dc6b94"
 inputs: 
 - "/Users/martinho/Desktop/Pomodoro/Pomodoro/Intervals.swift"
 - "/Users/martinho/Desktop/Pomodoro/Pomodoro/Tracker.swift"
 - "/Users/martinho/Desktop/Pomodoro/PomodoroTests/TrackerTests.swift"
-- "/Users/martinho/Desktop/Pomodoro/PomodoroTests/TimerTests.swift"
+- "/Users/martinho/Desktop/Pomodoro/Pomodoro/StringUtilities.swift"
 - "/Users/martinho/Desktop/Pomodoro/Pomodoro/Constants.swift"
-- "/Users/martinho/Desktop/Pomodoro/Pomodoro/Timer.swift"
-- "/Users/martinho/Desktop/Pomodoro/Pomodoro/State.swift"

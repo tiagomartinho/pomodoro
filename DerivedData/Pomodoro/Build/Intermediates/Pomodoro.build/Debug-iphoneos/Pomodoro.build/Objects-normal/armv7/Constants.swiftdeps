@@ -6,8 +6,8 @@ provides:
 nominals:
 class-members:
 top-level:
-- "NSUserDefaults"
 - "String"
+- "NSUserDefaults"
 - "StringLiteralType"
 member-access:
 - "CSo14NSUserDefaults"
