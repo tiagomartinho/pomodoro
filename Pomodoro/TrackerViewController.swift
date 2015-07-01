@@ -3,9 +3,9 @@ import AudioToolbox
 
 class TrackerViewController: UIViewController {
     
-    @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var timerProgress: UIProgressView!
     @IBOutlet weak var toggleTimerButton: UIButton!
+    @IBOutlet weak var pomodorosLabel: UILabel!
     
     let tracker = Tracker()
     let scheduler = Scheduler()
@@ -40,7 +40,11 @@ class TrackerViewController: UIViewController {
     }
     
     func updateLabel(){
-        timerLabel.text = tracker.time
+        var pomodoros = ""
+        for _ in 0..<tracker.pomodoros {
+            pomodoros += "."
+        }
+        pomodorosLabel.text = pomodoros
     }
     
     func updateProgressView(){
