@@ -18,6 +18,13 @@ class Tracker{
         return "25:00"
     }
     
+    var pomodoros:Int{
+        if let intervalNumber = Intervals().intervalNumberAtTimeInterval(self.timeInterval) {
+            return (intervalNumber+1)/2
+        }
+        return 0
+    }
+    
     private func timeFormatted(timeInSeconds:Int)->String{
         let minutesLeft = timeInSeconds/60
         let secondsLeft = timeInSeconds%60

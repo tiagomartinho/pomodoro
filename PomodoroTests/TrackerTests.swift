@@ -44,11 +44,17 @@ class TrackerTests: XCTestCase {
         XCTAssertEqualWithAccuracy(tracker.progress, progress, 0.001)
     }
     
+    func assertPomodoros(pomodoros:Int, AtDate date:NSDate){
+        tracker.start(date)
+        XCTAssertEqual(tracker.pomodoros,pomodoros)
+    }
+    
     func testStateAfterOneSecond() {
         let date = NSDate()
         assertTime("24:59",AtDate:date)
         assertDescription(.Pomodoro,AtDate:date)
         assertProgress(0.9993, AtDate:date)
+        assertPomodoros(0,AtDate:date)
     }
     
     func testStateAfterHalfPomdoro() {
@@ -56,6 +62,7 @@ class TrackerTests: XCTestCase {
         assertTime("12:29",AtDate:date)
         assertDescription(.Pomodoro,AtDate:date)
         assertProgress(0.4993, AtDate:date)
+        assertPomodoros(0,AtDate:date)
     }
     
     func testStateAfterFirstPomdoro() {
@@ -63,6 +70,7 @@ class TrackerTests: XCTestCase {
         assertTime("04:59",AtDate:date)
         assertDescription(.Pause,AtDate:date)
         assertProgress(0.9993, AtDate:date)
+        assertPomodoros(1,AtDate:date)
     }
     
     func testStateAfterFirstPomdoroAndFirstPause() {
@@ -70,6 +78,7 @@ class TrackerTests: XCTestCase {
         assertTime("24:59",AtDate:date)
         assertDescription(.Pomodoro,AtDate:date)
         assertProgress(0.9993, AtDate:date)
+        assertPomodoros(1,AtDate:date)
     }
     
     func testStateAtLongPause() {
@@ -77,6 +86,7 @@ class TrackerTests: XCTestCase {
         assertTime("14:59",AtDate:date)
         assertDescription(.LongPause,AtDate:date)
         assertProgress(0.9993, AtDate:date)
+        assertPomodoros(4,AtDate:date)
     }
     
     func testStateWayAfterTimerIsOver() {
@@ -84,6 +94,7 @@ class TrackerTests: XCTestCase {
         assertTime("25:00",AtDate:date)
         assertDescription(.Pomodoro,AtDate:date)
         assertProgress(1.0000, AtDate:date)
+        assertPomodoros(0,AtDate:date)
     }
     
     func testStateWayBeforeTimer() {
@@ -91,6 +102,7 @@ class TrackerTests: XCTestCase {
         assertTime("25:00",AtDate:date)
         assertDescription(.Pomodoro,AtDate:date)
         assertProgress(1.0000, AtDate:date)
+        assertPomodoros(0,AtDate:date)
     }
     
     func testStateRightBeforeTimerEnds() {
@@ -98,5 +110,6 @@ class TrackerTests: XCTestCase {
         assertTime("00:00",AtDate:date)
         assertDescription(.LongPause,AtDate:date)
         assertProgress(0.0010, AtDate:date)
+        assertPomodoros(4,AtDate:date)
     }
 }

@@ -19,6 +19,17 @@ class Intervals{
         }
     }
     
+    func intervalNumberAtTimeInterval(timeInterval:NSTimeInterval)->Int?{
+        var i = 0
+        for interval in intervals {
+            if timeInterval < Double(interval.cumulativeDuration) {
+                return i
+            }
+            i++
+        }
+        return nil
+    }
+    
     func intervalType(timeInterval:NSTimeInterval)->IntervalType{
         if let interval = intervalAtTimeInterval(timeInterval){
             return interval.type
@@ -47,12 +58,8 @@ class Intervals{
     }
     
     private func intervalAtTimeInterval(timeInterval:NSTimeInterval)->Interval?{
-        var i = 0
-        for interval in intervals {
-            if timeInterval < Double(interval.cumulativeDuration) {
-                return intervals[i]
-            }
-            i++
+        if let i = intervalNumberAtTimeInterval(timeInterval) {
+            return intervals[i]
         }
         return nil
     }
