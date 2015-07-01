@@ -72,7 +72,7 @@ class TrackerViewController: UIViewController {
     }
     
     func updateButton(){
-        toggleTimerButton.setTitle(tracker.isRunning ? "Stop" : "Start", forState: UIControlState.Normal)
+        toggleTimerButton.setTitle(tracker.isRunning ? "stop".localized : "start".localized, forState: UIControlState.Normal)
     }
     
     @IBAction func toggleTimer() {
@@ -94,7 +94,7 @@ class TrackerViewController: UIViewController {
     func tick(nsTimer: NSTimer) {
         updateUI()
         if tracker.time == "00:00" {
-            vibratePhone()
+                vibratePhone()
         }
     }
     
@@ -104,6 +104,9 @@ class TrackerViewController: UIViewController {
     }
     
     func vibratePhone(){
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        dispatch_async(queue) {
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        }
     }
 }

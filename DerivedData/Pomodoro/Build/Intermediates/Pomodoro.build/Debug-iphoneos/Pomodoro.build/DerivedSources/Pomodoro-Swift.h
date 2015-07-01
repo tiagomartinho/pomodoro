@@ -126,6 +126,7 @@ SWIFT_CLASS("_TtC8Pomodoro21TrackerViewController")
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified pomodorosLabel;
 @property (nonatomic) NSTimer * __nullable mainNSTimer;
 - (void)viewDidLoad;
+- (void)rotateLeftProgressBar;
 - (void)addObserverToForegroundAndBackgroundChanges;
 - (void)applicationWillEnterForeground:(NSNotification * __nonnull)notification;
 - (void)applicationDidEnterBackground:(NSNotification * __nonnull)notification;

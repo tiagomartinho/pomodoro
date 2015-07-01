@@ -61,6 +61,15 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>Base.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			gru64J9ACbE7wMyCzgbo0AMYjtU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>Base.lproj/Main.storyboardc/Info.plist</key>
 		<dict>
 			<key>hash</key>
@@ -90,47 +99,51 @@
 		</dict>
 		<key>Frameworks/libswiftCore.dylib</key>
 		<data>
-		CllnC74AKBlRvHfwi5QQO0FIyyc=
+		IXLZnq7uTPPH/I8607bpSNvRqVc=
 		</data>
 		<key>Frameworks/libswiftCoreAudio.dylib</key>
 		<data>
-		T4ZRTiaPMO/XOJOvIiyGml/k7+Q=
+		ybe46FYs2RA9/hvWT763NDDumaQ=
 		</data>
 		<key>Frameworks/libswiftCoreGraphics.dylib</key>
 		<data>
-		ueYMPSrAecpSRt3RP8/pH2hhFAE=
+		87zUH97JpKpz1XT0OeWRYEs3QV0=
 		</data>
 		<key>Frameworks/libswiftCoreImage.dylib</key>
 		<data>
-		khaqNmc4C4CiHekr0oloEiavaTU=
+		aiyoTzP4Fh7VQxx/qCrEnSu+Fcc=
 		</data>
 		<key>Frameworks/libswiftDarwin.dylib</key>
 		<data>
-		0sLUksgE3Ud0MrRPnrq4FOrhLvI=
+		imebGHbhmzlnB62in7F25G5ltf0=
 		</data>
 		<key>Frameworks/libswiftDispatch.dylib</key>
 		<data>
-		NPxcPjq9/c9e0KpaqYZR6Ny/oRM=
+		Q2ofK1Ja+bzyjiizQ5pe8wsb+bo=
 		</data>
 		<key>Frameworks/libswiftFoundation.dylib</key>
 		<data>
-		FynedasqJTkfUCQ0ZHVgcPTuCgU=
+		XuARflpQtVGtClS2XJCwiCUR5Fc=
 		</data>
 		<key>Frameworks/libswiftObjectiveC.dylib</key>
 		<data>
-		vsj3A4LOcN9/84XcHCzwXvssLGU=
+		ejJRnJNXgQ3/tteJbYtGKioYbrI=
 		</data>
 		<key>Frameworks/libswiftSecurity.dylib</key>
 		<data>
-		KbDFMwWkHLTEpzw/huyjUZHh6DI=
+		wn2DqvN9igbMbpTXWIbLHDBxw34=
 		</data>
 		<key>Frameworks/libswiftUIKit.dylib</key>
 		<data>
-		o84scLQ5RzjWVYyEtFly3vEXzK4=
+		rUDycCItZSrp7Lxco3miK4g7Fbw=
 		</data>
 		<key>Info.plist</key>
 		<data>
 		/YyAJRLmHJXAYHlIAXyXKvvjsJs=
+		</data>
+		<key>Localizable.strings</key>
+		<data>
+		gru64J9ACbE7wMyCzgbo0AMYjtU=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -140,6 +153,15 @@
 		<data>
 		njXjf91V7D7OaOo+F9zv1idS+I4=
 		</data>
+		<key>en.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			gru64J9ACbE7wMyCzgbo0AMYjtU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -200,6 +222,15 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>Base.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			gru64J9ACbE7wMyCzgbo0AMYjtU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>Base.lproj/Main.storyboardc/Info.plist</key>
 		<dict>
 			<key>hash</key>
@@ -229,48 +260,61 @@
 		</dict>
 		<key>Frameworks/libswiftCore.dylib</key>
 		<data>
-		CllnC74AKBlRvHfwi5QQO0FIyyc=
+		IXLZnq7uTPPH/I8607bpSNvRqVc=
 		</data>
 		<key>Frameworks/libswiftCoreAudio.dylib</key>
 		<data>
-		T4ZRTiaPMO/XOJOvIiyGml/k7+Q=
+		ybe46FYs2RA9/hvWT763NDDumaQ=
 		</data>
 		<key>Frameworks/libswiftCoreGraphics.dylib</key>
 		<data>
-		ueYMPSrAecpSRt3RP8/pH2hhFAE=
+		87zUH97JpKpz1XT0OeWRYEs3QV0=
 		</data>
 		<key>Frameworks/libswiftCoreImage.dylib</key>
 		<data>
-		khaqNmc4C4CiHekr0oloEiavaTU=
+		aiyoTzP4Fh7VQxx/qCrEnSu+Fcc=
 		</data>
 		<key>Frameworks/libswiftDarwin.dylib</key>
 		<data>
-		0sLUksgE3Ud0MrRPnrq4FOrhLvI=
+		imebGHbhmzlnB62in7F25G5ltf0=
 		</data>
 		<key>Frameworks/libswiftDispatch.dylib</key>
 		<data>
-		NPxcPjq9/c9e0KpaqYZR6Ny/oRM=
+		Q2ofK1Ja+bzyjiizQ5pe8wsb+bo=
 		</data>
 		<key>Frameworks/libswiftFoundation.dylib</key>
 		<data>
-		FynedasqJTkfUCQ0ZHVgcPTuCgU=
+		XuARflpQtVGtClS2XJCwiCUR5Fc=
 		</data>
 		<key>Frameworks/libswiftObjectiveC.dylib</key>
 		<data>
-		vsj3A4LOcN9/84XcHCzwXvssLGU=
+		ejJRnJNXgQ3/tteJbYtGKioYbrI=
 		</data>
 		<key>Frameworks/libswiftSecurity.dylib</key>
 		<data>
-		KbDFMwWkHLTEpzw/huyjUZHh6DI=
+		wn2DqvN9igbMbpTXWIbLHDBxw34=
 		</data>
 		<key>Frameworks/libswiftUIKit.dylib</key>
 		<data>
-		o84scLQ5RzjWVYyEtFly3vEXzK4=
+		rUDycCItZSrp7Lxco3miK4g7Fbw=
+		</data>
+		<key>Localizable.strings</key>
+		<data>
+		gru64J9ACbE7wMyCzgbo0AMYjtU=
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
 		njXjf91V7D7OaOo+F9zv1idS+I4=
 		</data>
+		<key>en.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			gru64J9ACbE7wMyCzgbo0AMYjtU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>

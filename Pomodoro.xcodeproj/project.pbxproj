@@ -14,6 +14,7 @@
 		EA8FF4E21B3D930800F6F77B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FF4E01B3D930800F6F77B /* Constants.swift */; };
 		EAAF6D3C1B3EF2E50088AB3A /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAF6D3B1B3EF2E50088AB3A /* NSDateExtension.swift */; };
 		EABE3C241B3ECC3600233DD8 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABE3C231B3ECC3600233DD8 /* Scheduler.swift */; };
+		EAD2199C1B4464CA00D3BE28 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EAD2199E1B4464CA00D3BE28 /* Localizable.strings */; };
 		EAD7372D1B431AFE009E5CC3 /* TrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD7372C1B431AFE009E5CC3 /* TrackerViewController.swift */; };
 		EAF4F6B61B4019E3009D79B2 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF4F6B51B4019E3009D79B2 /* Tracker.swift */; };
 		EAF4F6B81B4019F2009D79B2 /* TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF4F6B71B4019F2009D79B2 /* TrackerTests.swift */; };
@@ -21,8 +22,8 @@
 		EAF4F6BB1B401B26009D79B2 /* Intervals.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF4F6BA1B401B26009D79B2 /* Intervals.swift */; };
 		EAF4F6BC1B401C13009D79B2 /* Intervals.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF4F6BA1B401B26009D79B2 /* Intervals.swift */; };
 		EAF4F6C01B401DB4009D79B2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FF4E01B3D930800F6F77B /* Constants.swift */; };
-		EAF4F6C21B407048009D79B2 /* StringUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF4F6C11B407048009D79B2 /* StringUtilities.swift */; };
-		EAF4F6C31B40715D009D79B2 /* StringUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF4F6C11B407048009D79B2 /* StringUtilities.swift */; };
+		EAF4F6C21B407048009D79B2 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF4F6C11B407048009D79B2 /* StringExtension.swift */; };
+		EAF4F6C31B40715D009D79B2 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF4F6C11B407048009D79B2 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,11 +48,13 @@
 		EA8FF4E01B3D930800F6F77B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EAAF6D3B1B3EF2E50088AB3A /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		EABE3C231B3ECC3600233DD8 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		EAD2199D1B4464CA00D3BE28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EAD2199F1B4464CE00D3BE28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EAD7372C1B431AFE009E5CC3 /* TrackerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerViewController.swift; sourceTree = "<group>"; };
 		EAF4F6B51B4019E3009D79B2 /* Tracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
 		EAF4F6B71B4019F2009D79B2 /* TrackerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerTests.swift; sourceTree = "<group>"; };
 		EAF4F6BA1B401B26009D79B2 /* Intervals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intervals.swift; sourceTree = "<group>"; };
-		EAF4F6C11B407048009D79B2 /* StringUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtilities.swift; sourceTree = "<group>"; };
+		EAF4F6C11B407048009D79B2 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +109,10 @@
 		EA8FF4BE1B3D927E00F6F77B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EAD2199E1B4464CA00D3BE28 /* Localizable.strings */,
 				EA8FF4C01B3D927E00F6F77B /* AppDelegate.swift */,
 				EAAF6D3B1B3EF2E50088AB3A /* NSDateExtension.swift */,
-				EAF4F6C11B407048009D79B2 /* StringUtilities.swift */,
+				EAF4F6C11B407048009D79B2 /* StringExtension.swift */,
 				EA8FF4E01B3D930800F6F77B /* Constants.swift */,
 				EA8FF4C71B3D927E00F6F77B /* Images.xcassets */,
 				EA8FF4C91B3D927E00F6F77B /* LaunchScreen.xib */,
@@ -216,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA8FF4C61B3D927E00F6F77B /* Main.storyboard in Resources */,
+				EAD2199C1B4464CA00D3BE28 /* Localizable.strings in Resources */,
 				EA8FF4CB1B3D927E00F6F77B /* LaunchScreen.xib in Resources */,
 				EA8FF4C81B3D927E00F6F77B /* Images.xcassets in Resources */,
 			);
@@ -240,7 +245,7 @@
 				EAF4F6BB1B401B26009D79B2 /* Intervals.swift in Sources */,
 				EA8FF4E21B3D930800F6F77B /* Constants.swift in Sources */,
 				EAD7372D1B431AFE009E5CC3 /* TrackerViewController.swift in Sources */,
-				EAF4F6C21B407048009D79B2 /* StringUtilities.swift in Sources */,
+				EAF4F6C21B407048009D79B2 /* StringExtension.swift in Sources */,
 				EABE3C241B3ECC3600233DD8 /* Scheduler.swift in Sources */,
 				EAF4F6B61B4019E3009D79B2 /* Tracker.swift in Sources */,
 			);
@@ -253,7 +258,7 @@
 				EAF4F6BC1B401C13009D79B2 /* Intervals.swift in Sources */,
 				EAF4F6B91B401A35009D79B2 /* Tracker.swift in Sources */,
 				EAF4F6B81B4019F2009D79B2 /* TrackerTests.swift in Sources */,
-				EAF4F6C31B40715D009D79B2 /* StringUtilities.swift in Sources */,
+				EAF4F6C31B40715D009D79B2 /* StringExtension.swift in Sources */,
 				EAF4F6C01B401DB4009D79B2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +288,15 @@
 				EA8FF4CA1B3D927E00F6F77B /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		EAD2199E1B4464CA00D3BE28 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAD2199D1B4464CA00D3BE28 /* en */,
+				EAD2199F1B4464CE00D3BE28 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
