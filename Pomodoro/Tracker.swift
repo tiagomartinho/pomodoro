@@ -15,7 +15,7 @@ class Tracker{
         if timeLeft >= 0 {
             return timeFormatted(timeLeft)
         }
-        return "25:00"
+        return "00:00"
     }
     
     var pomodoros:Int{
@@ -35,7 +35,7 @@ class Tracker{
         if timeLeft >= 0 && currentIntervalDuration > 0{
             return Float(timeLeft/currentIntervalDuration)
         }
-        return 1.0
+        return 0.0
     }
     
     private var timeInterval:NSTimeInterval{

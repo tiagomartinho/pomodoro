@@ -91,17 +91,17 @@ class TrackerTests: XCTestCase {
     
     func testStateWayAfterTimerIsOver() {
         let date = NSDate(timeIntervalSinceNow: -(45*pomodoro+32*pause+10*longPause))
-        assertTime("25:00",AtDate:date)
+        assertTime("00:00",AtDate:date)
         assertDescription(.Pomodoro,AtDate:date)
-        assertProgress(1.0000, AtDate:date)
+        assertProgress(0.0, AtDate:date)
         assertPomodoros(0,AtDate:date)
     }
     
     func testStateWayBeforeTimer() {
         let date = NSDate(timeIntervalSinceNow: 45*pomodoro+32*pause+10*longPause)
-        assertTime("25:00",AtDate:date)
+        assertTime("00:00",AtDate:date)
         assertDescription(.Pomodoro,AtDate:date)
-        assertProgress(1.0000, AtDate:date)
+        assertProgress(0.0, AtDate:date)
         assertPomodoros(0,AtDate:date)
     }
     
