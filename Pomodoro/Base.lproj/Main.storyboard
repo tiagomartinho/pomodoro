@@ -17,11 +17,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGV-ZE-tfg">
+                                <rect key="frame" x="16" y="20" width="568" height="279"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="100"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:34" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7oy-sd-ecS" userLabel="Time Left">
+                                <rect key="frame" x="16" y="20" width="568" height="271"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="80"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cpN-vA-rBB">
                                 <rect key="frame" x="16" y="299" width="568" height="3"/>
                                 <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxc-ow-vTB">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxc-ow-vTB" userLabel="Start/Stop">
                                 <rect key="frame" x="16" y="301" width="568" height="299"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Start">
@@ -31,26 +43,28 @@
                                     <action selector="toggleTimer" destination="wfw-CA-PiP" eventType="touchUpInside" id="Vcx-AM-GDb"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:34" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7oy-sd-ecS">
-                                <rect key="frame" x="16" y="20" width="568" height="279"/>
-                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="80"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="cxc-ow-vTB" firstAttribute="leading" secondItem="a3d-9Y-phh" secondAttribute="leadingMargin" id="0C6-jO-jZF"/>
+                            <constraint firstItem="EGV-ZE-tfg" firstAttribute="centerX" secondItem="cpN-vA-rBB" secondAttribute="centerX" id="4SK-sB-cuD"/>
                             <constraint firstItem="cpN-vA-rBB" firstAttribute="top" secondItem="7oy-sd-ecS" secondAttribute="bottom" constant="8" symbolic="YES" id="6Fd-am-FMD"/>
+                            <constraint firstItem="EGV-ZE-tfg" firstAttribute="top" secondItem="EAe-dQ-cRN" secondAttribute="bottom" id="6tN-Cs-AE2"/>
+                            <constraint firstItem="EGV-ZE-tfg" firstAttribute="leading" secondItem="a3d-9Y-phh" secondAttribute="leadingMargin" id="AgJ-79-veF"/>
                             <constraint firstItem="cxc-ow-vTB" firstAttribute="top" secondItem="7oy-sd-ecS" secondAttribute="bottom" constant="8" symbolic="YES" id="An9-Qg-teY"/>
-                            <constraint firstItem="cpN-vA-rBB" firstAttribute="top" secondItem="7oy-sd-ecS" secondAttribute="bottom" id="Asp-oh-cq5"/>
+                            <constraint firstItem="cpN-vA-rBB" firstAttribute="top" secondItem="7oy-sd-ecS" secondAttribute="bottom" constant="8" symbolic="YES" id="Asp-oh-cq5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cxc-ow-vTB" secondAttribute="trailing" id="EgS-rA-o9S"/>
+                            <constraint firstItem="cpN-vA-rBB" firstAttribute="top" secondItem="EGV-ZE-tfg" secondAttribute="bottom" id="GD0-3K-UlK"/>
+                            <constraint firstItem="7oy-sd-ecS" firstAttribute="top" secondItem="EGV-ZE-tfg" secondAttribute="bottom" constant="-150" id="GOR-jg-GXq"/>
                             <constraint firstItem="cpN-vA-rBB" firstAttribute="leading" secondItem="a3d-9Y-phh" secondAttribute="leadingMargin" id="Gcd-rt-Jcv"/>
                             <constraint firstAttribute="centerY" secondItem="cxc-ow-vTB" secondAttribute="centerY" constant="-71" id="HRq-kX-w4x"/>
                             <constraint firstItem="eGe-ID-IHo" firstAttribute="top" secondItem="cxc-ow-vTB" secondAttribute="bottom" constant="8" symbolic="YES" id="Hym-N9-USJ"/>
                             <constraint firstAttribute="centerY" secondItem="cpN-vA-rBB" secondAttribute="centerY" id="IKA-Ij-7T3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EGV-ZE-tfg" secondAttribute="trailing" id="IVl-Jc-aDD"/>
+                            <constraint firstItem="EGV-ZE-tfg" firstAttribute="centerY" secondItem="7oy-sd-ecS" secondAttribute="centerY" id="MwC-ee-7VG"/>
                             <constraint firstAttribute="centerY" secondItem="7oy-sd-ecS" secondAttribute="centerY" constant="47.5" id="NWO-lQ-kDj"/>
                             <constraint firstItem="7oy-sd-ecS" firstAttribute="top" secondItem="EAe-dQ-cRN" secondAttribute="bottom" id="Nj6-nY-cim"/>
+                            <constraint firstItem="7oy-sd-ecS" firstAttribute="leading" secondItem="EGV-ZE-tfg" secondAttribute="trailing" constant="-305" id="SJJ-D1-8I7"/>
                             <constraint firstItem="cpN-vA-rBB" firstAttribute="leading" secondItem="7oy-sd-ecS" secondAttribute="trailing" constant="-568" id="TDL-oJ-pvh"/>
                             <constraint firstItem="cxc-ow-vTB" firstAttribute="height" secondItem="7oy-sd-ecS" secondAttribute="height" id="Vtm-1q-X6Z"/>
                             <constraint firstItem="cxc-ow-vTB" firstAttribute="leading" secondItem="a3d-9Y-phh" secondAttribute="leadingMargin" id="bF4-kh-Kla"/>
@@ -70,7 +84,9 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="GOR-jg-GXq"/>
                                 <exclude reference="NWO-lQ-kDj"/>
+                                <exclude reference="SJJ-D1-8I7"/>
                                 <exclude reference="chi-hs-tgF"/>
                                 <exclude reference="jEz-9j-wwa"/>
                                 <exclude reference="qbX-u4-ybu"/>
@@ -84,6 +100,8 @@
                                 <exclude reference="bF4-kh-Kla"/>
                                 <exclude reference="cAc-P1-lQv"/>
                                 <exclude reference="lX5-x7-0Vq"/>
+                                <exclude reference="4SK-sB-cuD"/>
+                                <exclude reference="MwC-ee-7VG"/>
                                 <exclude reference="Hym-N9-USJ"/>
                             </mask>
                         </variation>

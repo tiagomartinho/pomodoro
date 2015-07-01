@@ -51,7 +51,7 @@ class TrackerViewController: UIViewController {
                 timerProgress.tintColor = UIColor.redColor()
             }
             else{
-                timerProgress.tintColor = UIColor.blueColor()
+                timerProgress.tintColor = UIColor.greenColor()
             }
         }
         else {
