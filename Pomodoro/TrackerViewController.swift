@@ -34,15 +34,32 @@ class TrackerViewController: UIViewController {
     }
     
     func updateUI() {
+        updateLabel()
+        updateProgressView()
+        updateButton()
+    }
+    
+    func updateLabel(){
         timerLabel.text = tracker.time
-        timerLabel.textColor = UIColor.blackColor()
-        timerProgress.progress = tracker.progress
-        if tracker.description == IntervalType.Pomodoro {
-            timerProgress.tintColor = UIColor.redColor()
+    }
+    
+    func updateProgressView(){
+        if tracker.isRunning {
+            timerProgress.hidden = false
+            timerProgress.progress = tracker.progress
+            if tracker.description == IntervalType.Pomodoro {
+                timerProgress.tintColor = UIColor.redColor()
+            }
+            else{
+                timerProgress.tintColor = UIColor.blueColor()
+            }
         }
-        else{
-            timerProgress.tintColor = UIColor.greenColor()
+        else {
+            timerProgress.hidden = true
         }
+    }
+    
+    func updateButton(){
         toggleTimerButton.setTitle(tracker.isRunning ? "Stop" : "Start", forState: UIControlState.Normal)
     }
     

@@ -129,6 +129,9 @@ SWIFT_CLASS("_TtC8Pomodoro21TrackerViewController")
 - (void)applicationWillEnterForeground:(NSNotification * __nonnull)notification;
 - (void)applicationDidEnterBackground:(NSNotification * __nonnull)notification;
 - (void)updateUI;
+- (void)updateLabel;
+- (void)updateProgressView;
+- (void)updateButton;
 - (IBAction)toggleTimer;
 - (void)startTimer;
 - (void)tick:(NSTimer * __nonnull)nsTimer;
