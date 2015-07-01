@@ -17,6 +17,9 @@ class TrackerViewController: UIViewController {
         addObserverToForegroundAndBackgroundChanges()
         updateUI()
         startTimer()
+        let pTransform = CGAffineTransformMake(1, 0, 0, -1, 0, timerProgress.frame.size.height)
+        let transform = CGAffineTransformRotate(pTransform, CGFloat(M_PI))
+        timerProgress.transform = transform
     }
     
     func addObserverToForegroundAndBackgroundChanges(){
