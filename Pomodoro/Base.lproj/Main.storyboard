@@ -23,8 +23,12 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cpN-vA-rBB">
-                                <rect key="frame" x="16" y="299" width="568" height="3"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="cpN-vA-rBB" userLabel="Left Progress View">
+                                <rect key="frame" x="16" y="299" width="284" height="3"/>
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="X7k-qE-lER" userLabel="Right Progress View">
+                                <rect key="frame" x="300" y="299" width="284" height="3"/>
                                 <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxc-ow-vTB" userLabel="Start/Stop">
@@ -45,23 +49,31 @@
                             <constraint firstItem="EGV-ZE-tfg" firstAttribute="top" secondItem="EAe-dQ-cRN" secondAttribute="bottom" id="6tN-Cs-AE2"/>
                             <constraint firstItem="EGV-ZE-tfg" firstAttribute="leading" secondItem="a3d-9Y-phh" secondAttribute="leadingMargin" id="AgJ-79-veF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cxc-ow-vTB" secondAttribute="trailing" id="EgS-rA-o9S"/>
+                            <constraint firstItem="cxc-ow-vTB" firstAttribute="top" secondItem="X7k-qE-lER" secondAttribute="bottom" id="F8u-Zt-znk"/>
                             <constraint firstItem="cpN-vA-rBB" firstAttribute="top" secondItem="EGV-ZE-tfg" secondAttribute="bottom" id="GD0-3K-UlK"/>
                             <constraint firstItem="cpN-vA-rBB" firstAttribute="leading" secondItem="a3d-9Y-phh" secondAttribute="leadingMargin" id="Gcd-rt-Jcv"/>
                             <constraint firstAttribute="centerY" secondItem="cxc-ow-vTB" secondAttribute="centerY" constant="-71" id="HRq-kX-w4x"/>
                             <constraint firstItem="eGe-ID-IHo" firstAttribute="top" secondItem="cxc-ow-vTB" secondAttribute="bottom" constant="8" symbolic="YES" id="Hym-N9-USJ"/>
                             <constraint firstAttribute="centerY" secondItem="cpN-vA-rBB" secondAttribute="centerY" id="IKA-Ij-7T3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EGV-ZE-tfg" secondAttribute="trailing" id="IVl-Jc-aDD"/>
+                            <constraint firstAttribute="centerY" secondItem="X7k-qE-lER" secondAttribute="centerY" id="InW-XW-5fX"/>
+                            <constraint firstItem="X7k-qE-lER" firstAttribute="leading" secondItem="cpN-vA-rBB" secondAttribute="trailing" id="SEg-Ut-Od2"/>
+                            <constraint firstItem="X7k-qE-lER" firstAttribute="width" secondItem="cpN-vA-rBB" secondAttribute="width" id="aZI-PO-J99"/>
                             <constraint firstItem="cxc-ow-vTB" firstAttribute="leading" secondItem="a3d-9Y-phh" secondAttribute="leadingMargin" id="bF4-kh-Kla"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cxc-ow-vTB" secondAttribute="trailing" id="cb5-W2-azn"/>
                             <constraint firstAttribute="centerX" secondItem="cpN-vA-rBB" secondAttribute="centerX" id="jur-PK-A4Z"/>
                             <constraint firstItem="cxc-ow-vTB" firstAttribute="top" secondItem="cpN-vA-rBB" secondAttribute="bottom" constant="8" symbolic="YES" id="lX5-x7-0Vq"/>
                             <constraint firstItem="cxc-ow-vTB" firstAttribute="top" secondItem="cpN-vA-rBB" secondAttribute="bottom" id="lYN-ka-D4Q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cpN-vA-rBB" secondAttribute="trailing" id="oJt-JL-CrQ"/>
+                            <constraint firstItem="X7k-qE-lER" firstAttribute="top" secondItem="EGV-ZE-tfg" secondAttribute="bottom" id="oyL-4Q-W2M"/>
                             <constraint firstItem="eGe-ID-IHo" firstAttribute="top" secondItem="cxc-ow-vTB" secondAttribute="bottom" id="tto-zG-OV8"/>
+                            <constraint firstItem="X7k-qE-lER" firstAttribute="trailing" secondItem="a3d-9Y-phh" secondAttribute="trailingMargin" id="uPz-r7-Ma1"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="4SK-sB-cuD"/>
+                                <exclude reference="jur-PK-A4Z"/>
+                                <exclude reference="oJt-JL-CrQ"/>
                                 <exclude reference="EgS-rA-o9S"/>
                                 <exclude reference="HRq-kX-w4x"/>
                                 <exclude reference="bF4-kh-Kla"/>
@@ -71,8 +83,9 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="leftTimerProgress" destination="cpN-vA-rBB" id="ylI-QG-WJK"/>
                         <outlet property="pomodorosLabel" destination="EGV-ZE-tfg" id="8CY-dR-1pX"/>
-                        <outlet property="timerProgress" destination="cpN-vA-rBB" id="LQY-wT-vy7"/>
+                        <outlet property="rightTimerProgress" destination="X7k-qE-lER" id="9LM-di-gsG"/>
                         <outlet property="toggleTimerButton" destination="cxc-ow-vTB" id="BRa-iR-MCp"/>
                     </connections>
                 </viewController>

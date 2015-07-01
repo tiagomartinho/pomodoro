@@ -120,7 +120,8 @@ SWIFT_CLASS("_TtC8Pomodoro11AppDelegate")
 
 SWIFT_CLASS("_TtC8Pomodoro21TrackerViewController")
 @interface TrackerViewController : UIViewController
-@property (nonatomic, weak) IBOutlet UIProgressView * __null_unspecified timerProgress;
+@property (nonatomic, weak) IBOutlet UIProgressView * __null_unspecified rightTimerProgress;
+@property (nonatomic, weak) IBOutlet UIProgressView * __null_unspecified leftTimerProgress;
 @property (nonatomic, weak) IBOutlet UIButton * __null_unspecified toggleTimerButton;
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified pomodorosLabel;
 @property (nonatomic) NSTimer * __nullable mainNSTimer;

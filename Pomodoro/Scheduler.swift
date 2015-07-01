@@ -13,7 +13,7 @@ class Scheduler {
         var date = 0
         var i = 0
         for interval in Intervals().reference {
-            date += interval.duration
+            date += interval.duration * 60
             if i+1 < count(Intervals().reference) {
                 let nextIntervalMessage = Intervals().reference[i+1].message
                 scheduleNotificationWithAlertBody(nextIntervalMessage,AndFireDate: NSDate(timeIntervalSinceNow: NSTimeInterval(date)))

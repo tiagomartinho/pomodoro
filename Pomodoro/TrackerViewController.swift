@@ -3,7 +3,8 @@ import AudioToolbox
 
 class TrackerViewController: UIViewController {
     
-    @IBOutlet weak var timerProgress: UIProgressView!
+    @IBOutlet weak var rightTimerProgress: UIProgressView!
+    @IBOutlet weak var leftTimerProgress: UIProgressView!
     @IBOutlet weak var toggleTimerButton: UIButton!
     @IBOutlet weak var pomodorosLabel: UILabel!
     
@@ -14,12 +15,14 @@ class TrackerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        rotateLeftProgressBar()
         addObserverToForegroundAndBackgroundChanges()
         updateUI()
         startTimer()
-        let pTransform = CGAffineTransformMake(1, 0, 0, -1, 0, timerProgress.frame.size.height)
-        let transform = CGAffineTransformRotate(pTransform, CGFloat(M_PI))
-        timerProgress.transform = transform
+    }
+    
+    func rotateLeftProgressBar(){
+        leftTimerProgress.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
     }
     
     func addObserverToForegroundAndBackgroundChanges(){
@@ -51,18 +54,20 @@ class TrackerViewController: UIViewController {
     }
     
     func updateProgressView(){
-        if tracker.isRunning {
-            timerProgress.hidden = false
-            timerProgress.progress = tracker.progress
-            if tracker.description == IntervalType.Pomodoro {
-                timerProgress.tintColor = UIColor.redColor()
+        for progressBar in [leftTimerProgress,rightTimerProgress] {
+            if tracker.isRunning {
+                progressBar.hidden = false
+                progressBar.progress = tracker.progress
+                if tracker.description == IntervalType.Pomodoro {
+                    progressBar.tintColor = UIColor.redColor()
+                }
+                else{
+                    progressBar.tintColor = UIColor.greenColor()
+                }
             }
-            else{
-                timerProgress.tintColor = UIColor.greenColor()
+            else {
+                progressBar.hidden = true
             }
-        }
-        else {
-            timerProgress.hidden = true
         }
     }
     
