@@ -1,8 +1,0 @@
-version: "Apple Swift version 1.2 (swiftlang-602.0.53.1 clang-602.0.53)"
-options: "cfa5417c5cbec15bfd8eaee263dc6b94"
-inputs: 
-- "/Users/martinho/Desktop/Pomodoro/Pomodoro/Intervals.swift"
-- "/Users/martinho/Desktop/Pomodoro/Pomodoro/Tracker.swift"
-- "/Users/martinho/Desktop/Pomodoro/PomodoroTests/TrackerTests.swift"
-- "/Users/martinho/Desktop/Pomodoro/Pomodoro/StringUtilities.swift"
-- "/Users/martinho/Desktop/Pomodoro/Pomodoro/Constants.swift"

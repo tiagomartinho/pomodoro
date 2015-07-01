@@ -2,8 +2,8 @@ import Foundation
 
 class Intervals{
     
-    static let pomodoro = Interval(type:.Pomodoro,duration: 1,message:"work".localized,cumulativeDuration:0)
-    static let pause = Interval(type:.Pause,duration: 1,message:"pause".localized,cumulativeDuration:0)
+    static let pomodoro = Interval(type:.Pomodoro,duration: 25,message:"work".localized,cumulativeDuration:0)
+    static let pause = Interval(type:.Pause,duration: 5,message:"pause".localized,cumulativeDuration:0)
     static let longPause = Interval(type:.LongPause,duration: 15,message:"long".localized + "pause".localized,cumulativeDuration:0)
     
     let reference = [pomodoro,pause,pomodoro,pause,pomodoro,pause,pomodoro,longPause]
