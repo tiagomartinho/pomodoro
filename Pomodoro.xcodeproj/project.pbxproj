@@ -14,7 +14,6 @@
 		EA8FF4C81B3D927E00F6F77B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA8FF4C71B3D927E00F6F77B /* Images.xcassets */; };
 		EA8FF4CB1B3D927E00F6F77B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA8FF4C91B3D927E00F6F77B /* LaunchScreen.xib */; };
 		EA8FF4E21B3D930800F6F77B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FF4E01B3D930800F6F77B /* Constants.swift */; };
-		EAAF6D3C1B3EF2E50088AB3A /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAF6D3B1B3EF2E50088AB3A /* NSDateExtension.swift */; };
 		EABE3C241B3ECC3600233DD8 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABE3C231B3ECC3600233DD8 /* Scheduler.swift */; };
 		EAD2199C1B4464CA00D3BE28 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EAD2199E1B4464CA00D3BE28 /* Localizable.strings */; };
 		EAD7372D1B431AFE009E5CC3 /* TrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD7372C1B431AFE009E5CC3 /* TrackerViewController.swift */; };
@@ -50,7 +49,6 @@
 		EA8FF4D01B3D927E00F6F77B /* PomodoroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PomodoroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA8FF4D51B3D927E00F6F77B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA8FF4E01B3D930800F6F77B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		EAAF6D3B1B3EF2E50088AB3A /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		EABE3C231B3ECC3600233DD8 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		EAD2199D1B4464CA00D3BE28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EAD2199F1B4464CE00D3BE28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 			children = (
 				EA2955001B45CF950087AE7B /* Crashlytics */,
 				EAD2199E1B4464CA00D3BE28 /* Localizable.strings */,
-				EAAF6D3B1B3EF2E50088AB3A /* NSDateExtension.swift */,
 				EAF4F6C11B407048009D79B2 /* StringExtension.swift */,
 				EA8FF4E01B3D930800F6F77B /* Constants.swift */,
 				EA8FF4C71B3D927E00F6F77B /* Images.xcassets */,
@@ -273,7 +270,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAAF6D3C1B3EF2E50088AB3A /* NSDateExtension.swift in Sources */,
 				EA8FF4C11B3D927E00F6F77B /* AppDelegate.swift in Sources */,
 				EAF4F6BB1B401B26009D79B2 /* Intervals.swift in Sources */,
 				EA8FF4E21B3D930800F6F77B /* Constants.swift in Sources */,

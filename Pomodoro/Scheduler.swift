@@ -1,13 +1,11 @@
 import UIKit
 
-class Scheduler {    
-    func cancelAllPomodoriAndPauses(){
-        UIApplication.sharedApplication().cancelAllLocalNotifications()
-    }
+class Scheduler {
+    private let neededUIUserNotifications:UIUserNotificationType = UIUserNotificationType.Sound | UIUserNotificationType.Alert | UIUserNotificationType.Badge
     
     func schedulePomodoriAndPauses(){
         registerToSendTheUserNotifications()
-
+        
         var date = 0
         var i = 0
         for interval in Intervals().reference {
@@ -20,6 +18,10 @@ class Scheduler {
         }
     }
     
+    func cancelAllPomodoriAndPauses(){
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
+    }
+    
     private func scheduleNotificationWithAlertBody(alertBody:String,AndFireDate fireDate:NSDate){
         var notification:UILocalNotification = UILocalNotification()
         notification.alertBody = alertBody
@@ -28,8 +30,7 @@ class Scheduler {
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     
-    let needUIUserNotificationType:UIUserNotificationType = UIUserNotificationType.Sound | UIUserNotificationType.Alert | UIUserNotificationType.Badge
     private func registerToSendTheUserNotifications(){
-        UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: needUIUserNotificationType, categories: nil))
+        UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: neededUIUserNotifications, categories: nil))
     }
 }
