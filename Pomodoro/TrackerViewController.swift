@@ -1,5 +1,6 @@
 import UIKit
 import AudioToolbox
+import Crashlytics
 
 class TrackerViewController: UIViewController {
     
@@ -76,14 +77,18 @@ class TrackerViewController: UIViewController {
     }
     
     @IBAction func toggleTimer() {
+        let event:String
         if tracker.isRunning {
             tracker.stop()
             scheduler.cancelAllPomodoriAndPauses()
+            event = "Stop"
         }
         else {
             tracker.start()
             scheduler.schedulePomodoriAndPauses()
+            event = "Start"
         }
+        Crashlytics.sharedInstance().logEvent(event)
         updateUI()
     }
     
