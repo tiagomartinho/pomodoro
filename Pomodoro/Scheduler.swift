@@ -1,15 +1,13 @@
 import UIKit
 
 class Scheduler {    
-    init(){
-        registerToSendTheUserNotifications()
-    }
-    
     func cancelAllPomodoriAndPauses(){
         UIApplication.sharedApplication().cancelAllLocalNotifications()
     }
     
     func schedulePomodoriAndPauses(){
+        registerToSendTheUserNotifications()
+
         var date = 0
         var i = 0
         for interval in Intervals().reference {
