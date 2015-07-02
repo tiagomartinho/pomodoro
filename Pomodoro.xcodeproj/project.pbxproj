@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA2954FE1B45CF8D0087AE7B /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2954FC1B45CF8D0087AE7B /* Fabric.framework */; };
+		EA2954FF1B45CF8D0087AE7B /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2954FD1B45CF8D0087AE7B /* Crashlytics.framework */; };
 		EA8FF4C11B3D927E00F6F77B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FF4C01B3D927E00F6F77B /* AppDelegate.swift */; };
 		EA8FF4C61B3D927E00F6F77B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA8FF4C41B3D927E00F6F77B /* Main.storyboard */; };
 		EA8FF4C81B3D927E00F6F77B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA8FF4C71B3D927E00F6F77B /* Images.xcassets */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA2954FC1B45CF8D0087AE7B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		EA2954FD1B45CF8D0087AE7B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		EA8FF4BB1B3D927E00F6F77B /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA8FF4BF1B3D927E00F6F77B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA8FF4C01B3D927E00F6F77B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA2954FF1B45CF8D0087AE7B /* Crashlytics.framework in Frameworks */,
+				EA2954FE1B45CF8D0087AE7B /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA2955001B45CF950087AE7B /* Crashlytics */ = {
+			isa = PBXGroup;
+			children = (
+				EA2954FC1B45CF8D0087AE7B /* Fabric.framework */,
+				EA2954FD1B45CF8D0087AE7B /* Crashlytics.framework */,
+			);
+			name = Crashlytics;
+			sourceTree = "<group>";
+		};
 		EA8FF4B21B3D927E00F6F77B = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +116,7 @@
 				EAF4F6B51B4019E3009D79B2 /* Tracker.swift */,
 				EAF4F6BA1B401B26009D79B2 /* Intervals.swift */,
 				EA8FF4C41B3D927E00F6F77B /* Main.storyboard */,
+				EA8FF4C01B3D927E00F6F77B /* AppDelegate.swift */,
 				EA8FF4BE1B3D927E00F6F77B /* Supporting Files */,
 			);
 			path = Pomodoro;
@@ -109,8 +125,8 @@
 		EA8FF4BE1B3D927E00F6F77B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EA2955001B45CF950087AE7B /* Crashlytics */,
 				EAD2199E1B4464CA00D3BE28 /* Localizable.strings */,
-				EA8FF4C01B3D927E00F6F77B /* AppDelegate.swift */,
 				EAAF6D3B1B3EF2E50088AB3A /* NSDateExtension.swift */,
 				EAF4F6C11B407048009D79B2 /* StringExtension.swift */,
 				EA8FF4E01B3D930800F6F77B /* Constants.swift */,
@@ -148,6 +164,7 @@
 				EA8FF4B71B3D927E00F6F77B /* Sources */,
 				EA8FF4B81B3D927E00F6F77B /* Frameworks */,
 				EA8FF4B91B3D927E00F6F77B /* Resources */,
+				EA2954FB1B45CF6D0087AE7B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -234,6 +251,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EA2954FB1B45CF6D0087AE7B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 71002fce528e43c12db3883d519a3f11464d1889 e4947bc85f37beffe5e3e1a929d3d52ec5d6e89d51f402fda3cab5b74cbd2b07";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EA8FF4B71B3D927E00F6F77B /* Sources */ = {
@@ -391,6 +424,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pomodoro",
+				);
 				INFOPLIST_FILE = Pomodoro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -404,6 +441,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pomodoro",
+				);
 				INFOPLIST_FILE = Pomodoro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
